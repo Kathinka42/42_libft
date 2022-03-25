@@ -1,35 +1,46 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kczichow <kczichow@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/22 11:44:29 by kczichow          #+#    #+#             */
-/*   Updated: 2022/03/25 10:28:23 by kczichow         ###   ########.fr       */
+/*   Created: 2022/03/23 11:35:12 by kczichow          #+#    #+#             */
+/*   Updated: 2022/03/23 13:56:27 by kczichow         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string.h>
 #include <stdio.h>
 
-int	ft_strlen(char *str)
+void	*ft_memcpy(void *dst1, const void *src1, size_t n)
 {
-	int	i;
+	size_t i;
+	char	*dst2;
+	//char	*src2;
 
 	i = 0;
-	while (str[i] != '\0')
-	i++;
-	return (i);
+	dst2 = dst1;
+
+	while (i < n)
+	{
+		dst2[i] = ((char *)src1)[i];
+		i++;
+	}
+	return (dst1);
 }
 
 int	main()
 {
-	char str1[20] = "";
-	printf("%d\n", ft_strlen(str1));
+	const char src1[20] = "Hello";
+	char dst1[20] = "This is 42";
 
-	char str2[20] = "";
-	printf("%lu\n", strlen(str2));
+	printf("%s\n", ft_memcpy(dst1, src1, 20));
+	
+	const char src2[20] = "Hello";
+	char dst2[20] = "This is 42";
 
-	return(0);
+	printf("%s\n", memcpy(dst2, src2, 20));
+
+	return (0);
 }

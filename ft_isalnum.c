@@ -1,35 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_isalnum.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kczichow <kczichow@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/22 11:44:29 by kczichow          #+#    #+#             */
-/*   Updated: 2022/03/25 10:28:23 by kczichow         ###   ########.fr       */
+/*   Created: 2022/03/23 08:52:18 by kczichow          #+#    #+#             */
+/*   Updated: 2022/03/23 09:02:45 by kczichow         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
-#include <stdio.h>
+#include <ctype.h>
 
-int	ft_strlen(char *str)
+int	ft_isalnum(int i)
 {
-	int	i;
-
-	i = 0;
-	while (str[i] != '\0')
-	i++;
-	return (i);
-}
-
-int	main()
-{
-	char str1[20] = "";
-	printf("%d\n", ft_strlen(str1));
-
-	char str2[20] = "";
-	printf("%lu\n", strlen(str2));
-
-	return(0);
+	if ((i >= '0' && i <= '9') || (i >= 'A' && i <= 'Z')
+		|| (i >= 'a' && i <= 'z'))
+		return (1);
+	return (0);
 }

@@ -1,35 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kczichow <kczichow@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/22 11:44:29 by kczichow          #+#    #+#             */
-/*   Updated: 2022/03/25 10:28:23 by kczichow         ###   ########.fr       */
+/*   Created: 2022/03/23 10:55:08 by kczichow          #+#    #+#             */
+/*   Updated: 2022/03/25 13:38:22 by kczichow         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string.h>
 #include <stdio.h>
 
-int	ft_strlen(char *str)
+void	*ft_bzero(void *str1, size_t len)
 {
-	int	i;
+	size_t i;
+	char *str2;
 
 	i = 0;
-	while (str[i] != '\0')
-	i++;
-	return (i);
+	str2 = str1;
+	if (len != 0)
+		while ( i < len)
+		{
+			str2[i] = '\0';
+			i++;
+		}
+	return (0);
 }
 
 int	main()
 {
-	char str1[20] = "";
-	printf("%d\n", ft_strlen(str1));
-
-	char str2[20] = "";
-	printf("%lu\n", strlen(str2));
-
-	return(0);
+	
 }

@@ -1,35 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kczichow <kczichow@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/22 11:44:29 by kczichow          #+#    #+#             */
-/*   Updated: 2022/03/25 10:28:23 by kczichow         ###   ########.fr       */
+/*   Created: 2022/03/23 09:27:34 by kczichow          #+#    #+#             */
+/*   Updated: 2022/03/23 12:10:39 by kczichow         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string.h>
-#include <stdio.h>
+//#include <stdio.h>
+// void pointer cannot be dereferenced, therefore new pointer needs to be created.
 
-int	ft_strlen(char *str)
+void	*ft_memset(void *str1, int c, size_t len)
 {
-	int	i;
+	size_t	i;
+	char	*str2;
 
 	i = 0;
-	while (str[i] != '\0')
-	i++;
-	return (i);
+	str2 = str1;
+	while (i < len)
+	{
+		str2[i] = c;
+		i++;
+	}
+	return (str1);
 }
 
+/*
 int	main()
 {
-	char str1[20] = "";
-	printf("%d\n", ft_strlen(str1));
-
-	char str2[20] = "";
-	printf("%lu\n", strlen(str2));
-
-	return(0);
+char str1[20] = "Hallo 42";
+	printf("%s\n", ft_memset(str1, 43, 4));
+char str2[20] = "Hallo 42";
+	printf("%s\n", memset(str2, 43, 4));
+	return (0);
 }
+*/

@@ -1,35 +1,45 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kczichow <kczichow@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/22 11:44:29 by kczichow          #+#    #+#             */
-/*   Updated: 2022/03/25 10:28:23 by kczichow         ###   ########.fr       */
+/*   Created: 2022/03/23 13:57:10 by kczichow          #+#    #+#             */
+/*   Updated: 2022/03/23 14:13:13 by kczichow         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string.h>
 #include <stdio.h>
 
-int	ft_strlen(char *str)
+void	*ft_memmove(void *dst1, const void *src1, size_t len)
 {
-	int	i;
+	size_t i;
+	char *dst2;
 
 	i = 0;
-	while (str[i] != '\0')
-	i++;
-	return (i);
+	dst2 = dst1;
+
+	while (i < len)
+	{
+		dst2[i] = ((char *)src1)[i];
+		i++;
+	}
+	return (dst1);
 }
 
 int	main()
 {
-	char str1[20] = "";
-	printf("%d\n", ft_strlen(str1));
+	const char src1[30] = "Dies ist ein Test";
+	char dst1[20] = "XXXXXXXXXXXXX";
 
-	char str2[20] = "";
-	printf("%lu\n", strlen(str2));
+	printf("%s\n", ft_memmove(dst1, src1, 30));
 
-	return(0);
+	const char src2[30] = "Dies ist ein Test";
+	char dst2[20] = "XXXXXXXXXXXXX";
+
+	printf("%s\n", ft_memmove(dst2, src2, 30));
+
+	return (0);
 }

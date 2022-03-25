@@ -1,35 +1,48 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kczichow <kczichow@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/22 11:44:29 by kczichow          #+#    #+#             */
-/*   Updated: 2022/03/25 10:28:23 by kczichow         ###   ########.fr       */
+/*   Created: 2022/03/25 11:46:33 by kczichow          #+#    #+#             */
+/*   Updated: 2022/03/25 13:54:46 by kczichow         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string.h>
 #include <stdio.h>
 
-int	ft_strlen(char *str)
+// locate the first occurence of c in string str, whereas the terminating
+// null is considered part of the string; int i is converted to char;
+
+char	*ft_strchr(char *str, int c)
 {
-	int	i;
+	int i;
 
 	i = 0;
 	while (str[i] != '\0')
-	i++;
-	return (i);
+	{
+		if ((char)c == str[i])
+		{
+			return (&str[i]);
+		}
+		i++;
+	}
+	if (str[i] == '\0')
+		return ('\0');
+	return (NULL);
 }
 
 int	main()
 {
-	char str1[20] = "";
-	printf("%d\n", ft_strlen(str1));
+	char str1[20] = "Hello 42";
+	int a;
+	a = '\0';
 
-	char str2[20] = "";
-	printf("%lu\n", strlen(str2));
+	printf("%s\n", ft_strchr(str1, a));
 
-	return(0);
+	printf("%s\n", strchr(str1, a));
+
+	return (0);
 }
