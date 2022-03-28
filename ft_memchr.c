@@ -1,28 +1,47 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kczichow <kczichow@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/22 14:47:38 by kczichow          #+#    #+#             */
-/*   Updated: 2022/03/28 19:40:23 by kczichow         ###   ########.fr       */
+/*   Created: 2022/03/28 19:54:48 by kczichow          #+#    #+#             */
+/*   Updated: 2022/03/28 20:08:41 by kczichow         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//#include <ctype.h>
-//#include <stdio.h>
-#include "libft.h"
+#include <string.h>
+#include <stdio.h>
 
-int	ft_isalpha(int i)
+void	*ft_memchr(void	*str, int	c, size_t	n)
 {
-	if (('A' <= i && i <= 'Z') || ('a' <= i && i <= 'z'))
-		return (1);
+	size_t i;
+	char *str2;
+
+	str2 = str;
+
+	i = 0;
+	while (str2[i] != '\0' && i < n)
+	{
+		if ((char)c == str2[i])
+		{
+			return (&str2[i]);
+		}
+		i++;
+	}
+	if (str2[i] == '\0' )
+		return ('\0');
 	return (0);
 }
-
-int	main(void)
+int	main()
 {
-	printf("%d", ft_isalpha('0'));
+	char str1[20] = "Hello 42";
+	int a;
+	a = ' ';
+
+	printf("%s\n", ft_memchr(str1, a, 7));
+
+	printf("%s\n", memchr(str1, a, 7));
+
 	return (0);
 }
