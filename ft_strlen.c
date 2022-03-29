@@ -10,8 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
-#include <stdio.h>
+#include "libft.h"
 
 int	ft_strlen(char *str)
 {
@@ -19,10 +18,11 @@ int	ft_strlen(char *str)
 
 	i = 0;
 	while (str[i] != '\0')
-	i++;
+		i++;
 	return (i);
 }
 
+/*
 int	main()
 {
 	char str1[20] = "";
@@ -33,3 +33,4 @@ int	main()
 
 	return(0);
 }
+*/

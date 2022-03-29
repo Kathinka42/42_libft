@@ -10,19 +10,30 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <ctype.h>
-//#include <stdio.h>
+#include "libft.h"
 
 int	ft_isdigit(int i)
 {
-	if ('0' <= i && i <= '9')
+	if (i >= '0' && i <= '9')
 		return (1);
 	return (0);
 }
 
-/*int	main(void)
+/*
+int	main(void)
 {
-	printf("%d", ft_isdigit('r'));
+	printf("%d\n", ft_isdigit('-3'));
+	printf("%d\n", isdigit('-3'));
+
+	printf("%d\n", ft_isdigit('2'));
+	printf("%d\n", isdigit('2'));
+
+	printf("%d\n", ft_isdigit('e'));
+	printf("%d\n", isdigit('e'));
+
+	printf("%d\n", ft_isdigit(' '));
+	printf("%d\n", isdigit(' '));
+
 	return (0);
 }
 */

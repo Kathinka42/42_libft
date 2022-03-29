@@ -13,6 +13,8 @@
 #include <string.h>
 #include <stdio.h>
 
+// The bzero() function writes n zeroed bytes to the string str;
+
 void	*ft_bzero(void *str1, size_t len)
 {
 	size_t i;
@@ -21,7 +23,7 @@ void	*ft_bzero(void *str1, size_t len)
 	i = 0;
 	str2 = str1;
 	if (len != 0)
-		while ( i < len)
+		while (i < len)
 		{
 			str2[i] = '\0';
 			i++;
@@ -31,5 +33,13 @@ void	*ft_bzero(void *str1, size_t len)
 
 int	main()
 {
-	
+	char str1[20] = "Hello 42";
+	char str2[20] = "Hello 42";
+	size_t i;
+	i = 5;
+
+	printf("%s\n", ft_bzero(str1, i));
+	printf("%s\n", bzero(str2, i));
+
+	return (0);
 }

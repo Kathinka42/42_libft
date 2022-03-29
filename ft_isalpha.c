@@ -10,19 +10,26 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-//#include <ctype.h>
-//#include <stdio.h>
 #include "libft.h"
+
+// The isalpha() function tests for any character for which ft_isupper or
+// ft_islower is true.  The value of the argument must be representable as an
+// unsigned char or the value of EOF.
+// <ctype.h>
 
 int	ft_isalpha(int i)
 {
-	if (('A' <= i && i <= 'Z') || ('a' <= i && i <= 'z'))
+	if ((i >= 'A' && i <= 'Z') || (i >= 'a' && i <= 'z'))
 		return (1);
 	return (0);
 }
 
+/*
 int	main(void)
 {
-	printf("%d", ft_isalpha('0'));
+	printf("%d\n", ft_isalpha('e'));
+	printf("%d\n", isalpha('e'));
+
 	return (0);
 }
+*/

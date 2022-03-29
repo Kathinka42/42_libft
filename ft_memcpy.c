@@ -10,33 +10,34 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
-#include <stdio.h>
+#include "libft.h"
 
-void	*ft_memcpy(void *dst1, const void *src1, size_t n)
+//The memcpy() function copies n bytes from memory area src to memory area dst;
+
+void	*ft_memcpy(void *dst1, const void *src, size_t n)
 {
 	size_t i;
 	char	*dst2;
-	//char	*src2;
 
 	i = 0;
 	dst2 = dst1;
 
 	while (i < n)
 	{
-		dst2[i] = ((char *)src1)[i];
+		dst2[i] = ((char *)src)[i];
 		i++;
 	}
 	return (dst1);
 }
 
+/*
 int	main()
 {
 	const char src1[20] = "Hello";
 	char dst1[20] = "This is 42";
 
 	printf("%s\n", ft_memcpy(dst1, src1, 20));
-	
+
 	const char src2[20] = "Hello";
 	char dst2[20] = "This is 42";
 
@@ -44,3 +45,4 @@ int	main()
 
 	return (0);
 }
+*/

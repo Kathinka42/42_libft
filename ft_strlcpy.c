@@ -10,11 +10,12 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
-#include <stdio.h>
+#include "libft.h"
 
-int	ft_strlen(char *str)
-{
+// kann im Moment die Funktion nicht aus der Lib aufrufen, Warum?
+
+int	ft_strlen(char *str);
+/*{
 	int	i;
 
 	i = 0;
@@ -22,9 +23,8 @@ int	ft_strlen(char *str)
 	i++;
 	return (i);
 }
-
+*/
 size_t	ft_strlcpy(char *dst, char *src, size_t dstsize)
-//char *ft_strlcpy(char *dst, char *src, size_t dstsize)
 {
 	size_t i;
 
@@ -38,7 +38,6 @@ size_t	ft_strlcpy(char *dst, char *src, size_t dstsize)
 	dst[i] = '\0';
 
 	return (ft_strlen(src));
-	//return (dst);
 }
 
 int	main()

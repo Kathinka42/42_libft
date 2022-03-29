@@ -10,10 +10,12 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
-#include <stdio.h>
+#include "libft.h"
 
-void	*ft_memmove(void *dst1, const void *src1, size_t len)
+//The memmove() function copies len bytes from string src to string dst. The
+//two strings may overlap;
+
+void	*ft_memmove(void *dst1, const void *src, size_t len)
 {
 	size_t i;
 	char *dst2;
@@ -23,23 +25,25 @@ void	*ft_memmove(void *dst1, const void *src1, size_t len)
 
 	while (i < len)
 	{
-		dst2[i] = ((char *)src1)[i];
+		dst2[i] = ((char *)src)[i];
 		i++;
 	}
 	return (dst1);
 }
 
+/*
 int	main()
 {
 	const char src1[30] = "Dies ist ein Test";
-	char dst1[20] = "XXXXXXXXXXXXX";
+	char dst1[30] = "XXXXXXXXXXXXX";
 
 	printf("%s\n", ft_memmove(dst1, src1, 30));
 
 	const char src2[30] = "Dies ist ein Test";
-	char dst2[20] = "XXXXXXXXXXXXX";
+	char dst2[30] = "XXXXXXXXXXXXX";
 
-	printf("%s\n", ft_memmove(dst2, src2, 30));
+	printf("%s\n", memmove(dst2, src2, 30));
 
 	return (0);
 }
+*/

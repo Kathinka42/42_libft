@@ -10,9 +10,11 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
-//#include <stdio.h>
-// void pointer cannot be dereferenced, therefore new pointer needs to be created.
+#include "libft.h"
+
+//void pointer can't dereferenced, therefore new pointer needs to be created;
+//The memset() function writes len bytes of value c (converted to an unsigned
+//char) to the string b.
 
 void	*ft_memset(void *str1, int c, size_t len)
 {

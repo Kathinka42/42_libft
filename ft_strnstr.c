@@ -10,43 +10,47 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
 #include <stdio.h>
+#include <string.h>
 
-// locate the last occurence of c in string str, whereas the terminating
-// null is considered part of the string; int i is converted to char;
-
-char	*ft_strrchr(char *str, int c)
+char *ft_strnstr(char *haystack, char *needle, size_t len)
 {
-	int i;
+  size_t  i;
+  size_t  j;
 
-	i = 0;
-	while (str[i] != '\0')
-	{
-		i++;
-	}
-	i++;
+  i = 0;
+  j = 0;
 
-	while (i > 0)
-	{
-		if((char)c == str[i])
-		{
-			return (&str[i]);
-		}
-	i--;
-	}
-return (0);
+  if (needle[j] == '\0')
+    return (haystack);
+
+  while (haystack[i] != '\0' && i < len)
+  {
+    j = 0;
+    if (haystack[i] == needle[j])
+    {
+      while (haystack[i+j] == needle[j] && haystack[i+j] != '\0' && (i+j < len))
+      {
+        if (needle[j+1] == '\0')
+          return (&haystack[i]);
+          j++;
+      }
+    }
+    i++;
+  }
+  return (0);
 }
 
 int main()
 {
-	char str1[20] = "Hello 42";
-	int a;
-	a = '\0';
+	char str1[20] = "ABCDEFGHIJKLMN";
+  char str2[20] = "JKL";
+	size_t len;
+	len = 10;
 
-	printf("%s\n", ft_strrchr(str1, a));
+	printf("%s\n", ft_strnstr(str1,str2,len));
 
-	printf("%s\n", strrchr(str1, a));
+	printf("%s\n", strnstr(str1,str2,len));
 
 	return (0);
 }

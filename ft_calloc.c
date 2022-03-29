@@ -1,20 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isascii.c                                       :+:      :+:    :+:   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kczichow <kczichow@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/23 09:06:18 by kczichow          #+#    #+#             */
-/*   Updated: 2022/03/23 09:10:27 by kczichow         ###   ########.fr       */
+/*   Created: 2022/03/23 10:55:08 by kczichow          #+#    #+#             */
+/*   Updated: 2022/03/25 13:38:22 by kczichow         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <stdlib.h>
+#include <stdio.h>
 
-int	ft_isascii(int i)
+void *ft_calloc(size_t count, size_t size)
 {
-	if (i >= 0 && i <= 127)
-		return (1);
-	return (0);
+
 }
