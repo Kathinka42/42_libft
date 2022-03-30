@@ -6,15 +6,15 @@
 /*   By: kczichow <kczichow@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/22 11:44:29 by kczichow          #+#    #+#             */
-/*   Updated: 2022/03/25 10:28:23 by kczichow         ###   ########.fr       */
+/*   Updated: 2022/03/30 11:12:04 by kczichow         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_strlen(char *str)
+size_t	ft_strlen(const char *str)
 {
-	int	i;
+	size_t	i;
 
 	i = 0;
 	while (str[i] != '\0')
@@ -22,15 +22,13 @@ int	ft_strlen(char *str)
 	return (i);
 }
 
-/*
-int	main()
-{
-	char str1[20] = "";
-	printf("%d\n", ft_strlen(str1));
+// int	main()
+// {
+// 	const char str1[20] = "";
+// 	printf("%zu\n", ft_strlen(str1));
 
-	char str2[20] = "";
-	printf("%lu\n", strlen(str2));
+// 	const char str2[20] = "";
+// 	printf("%zu\n", strlen(str2));
 
-	return(0);
-}
-*/
+// 	return(0);
+// }
