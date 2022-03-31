@@ -6,7 +6,7 @@
 /*   By: kczichow <kczichow@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/23 10:55:08 by kczichow          #+#    #+#             */
-/*   Updated: 2022/03/30 11:27:14 by kczichow         ###   ########.fr       */
+/*   Updated: 2022/03/31 13:00:03 by kczichow         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,20 +15,17 @@
 
 // The bzero() function writes n zeroed bytes to the string str;
 
-void	*ft_bzero(void *str1, size_t len)
+void	*ft_bzero(void *str, size_t len)
 {
 	size_t	i;
-	char	*str2;
 
 	i = 0;
-	str2 = str1;
-	if (len != 0)
-		while (i <= len)
-		{
-			str2[i] = '\0';
-			i++;
-		}
-	return (0);
+	while (i < len)
+	{
+		((char *)str)[i] = '\0';
+		i++;
+	}
+	return (NULL);
 }
 
 // int	main()

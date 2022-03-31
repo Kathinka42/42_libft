@@ -6,7 +6,7 @@
 /*   By: kczichow <kczichow@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/23 13:57:10 by kczichow          #+#    #+#             */
-/*   Updated: 2022/03/30 16:18:06 by kczichow         ###   ########.fr       */
+/*   Updated: 2022/03/31 09:03:02 by kczichow         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,6 @@ void	*ft_memmove(void *dst1, const void *src, size_t len)
 
 	i = 0;
 	dst2 = dst1;
-
 	if (dst2 < (char *) src)
 	{
 		while (i < len)
@@ -33,9 +32,9 @@ void	*ft_memmove(void *dst1, const void *src, size_t len)
 	}
 	else
 	{
-		while (len > 0) 
+		while (len > 0)
 		{
-			dst2[len-1] = ((char *)src)[len-1];
+			dst2[len - 1] = ((char *)src)[len - 1];
 			len--;
 		}
 	}

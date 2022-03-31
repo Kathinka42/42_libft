@@ -6,7 +6,7 @@
 /*   By: kczichow <kczichow@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/23 14:23:48 by kczichow          #+#    #+#             */
-/*   Updated: 2022/03/30 15:03:22 by kczichow         ###   ########.fr       */
+/*   Updated: 2022/03/31 13:30:54 by kczichow         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,32 +16,34 @@
 
 size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 {
-	size_t i;
+	size_t	srclen;
 
-	i = 0;
-
-	while (i < dstsize && src[i] != '\0')
+	srclen = ft_strlen(src);
+	if (srclen + 1 < dstsize)
 	{
-		dst[i] = src[i];
-		i++;
+		ft_memcpy(dst, src, srclen + 1);
 	}
-	dst[i] = '\0';
-
-	return (ft_strlen(src));
-	return (0);
+	else if (dstsize != 0)
+	{
+		ft_memcpy(dst, src, dstsize - 1);
+		dst[dstsize - 1] = '\0';
+	}
+	return (srclen);
 }
 
 // int	main()
 // {
-// 	char dst1[20] = "Hello 42";
+// 	char dst1[20];
+// 	char dst2[20];
+// 	char dst3[20];
+// 	char dst4[20];
 // 	const char src1[20] = "See you there";
-
-// 	printf("own function%zu\n", ft_strlcpy(dst1, src1, 10));
-
-// 	char dst2[20] = "Hello 42";
 // 	const char src2[20] = "See you there";
 
-// 	printf("lib function%zu\n", strlcpy(dst2, src2, 10));
+// 	printf("own function%zu\n", ft_strlcpy(dst1, src1, 0));
+// 	printf("lib function%zu\n", strlcpy(dst2, src1, 0));
+// 	printf("own function%s\n", dst1);
+// 	printf("own function%s\n", dst2);
 
 // 	return (0);
 // }

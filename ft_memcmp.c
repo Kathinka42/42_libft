@@ -6,7 +6,7 @@
 /*   By: kczichow <kczichow@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/28 20:08:52 by kczichow          #+#    #+#             */
-/*   Updated: 2022/03/30 16:19:15 by kczichow         ###   ########.fr       */
+/*   Updated: 2022/03/31 10:35:17 by kczichow         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,14 @@
 
 int	ft_memcmp(const void *str1, const void *str2, size_t	n)
 {
-	size_t		i;
-	const char	*str3;
-	const char	*str4;
+	size_t			i;
+	unsigned char	*str3;
+	unsigned char	*str4;
 
-	str3 = str1;
-	str4 = str2;
+	str3 = (unsigned char *) str1;
+	str4 = (unsigned char *) str2;
+	if (n == 0)
+		return (0);
 	i = 0;
 	while ((i < (n - 1)) && str3[i] != '\0' && str4[i] != '\0')
 	{
@@ -32,7 +34,7 @@ int	ft_memcmp(const void *str1, const void *str2, size_t	n)
 }
 
 // int	main()
-// {
+
 // 	const char str11[20] = "MMMMMX";
 // 	const char str21[20] = "MMMMMMMMMM";
 // 	size_t n1 = 9;

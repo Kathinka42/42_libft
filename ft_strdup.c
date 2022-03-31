@@ -6,7 +6,7 @@
 /*   By: kczichow <kczichow@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/30 09:59:43 by kczichow          #+#    #+#             */
-/*   Updated: 2022/03/30 15:02:17 by kczichow         ###   ########.fr       */
+/*   Updated: 2022/03/31 13:33:01 by kczichow         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,44 +17,36 @@
 // does the copy, and returns a pointer to it.  The pointer may
 // subsequently be used as an argument to the function free(3).
 
-char *ft_strdup(const char *s1)
+char	*ft_strdup(const char *s1)
 {
-  char *dupl;
-  size_t len;
-  len = ft_strlen(s1);
+	char	*dupl;
+	size_t	len;
+	size_t	index;
 
-  dupl = malloc(sizeof(char) * (len + 1));
-  if (dupl == NULL) // checkt, ob ich wirklich Speicher bekommen habe
-  {
-    return (NULL);
-  }
-  else
-  {
-    size_t index;
-
-	  index = 0;
-
-	  while (index < len && s1[index] != '\0')
-	  {
-		  dupl[index] = s1[index];
-		  index++;
-	  }
-	  dupl[index] = '\0';
-    index = 0;
-    return (&dupl[index]);
-  }
+	len = ft_strlen(s1);
+	dupl = malloc(sizeof(char) * (len + 1));
+	if (dupl == NULL)
+		return (NULL);
+	else
+		index = 0;
+	while (index < len && s1[index] != '\0')
+	{
+		dupl[index] = s1[index];
+		index++;
+	}
+	dupl[index] = '\0';
+	index = 0;
+	return (&dupl[index]);
 }
 
-int main()
-{
-  char s1[] = "Hallo 42";
+// int main()
+// {
+//   char s1[] = "Hallo 42";
 
-  printf("%s\n", ft_strdup(s1));
-  printf("%s\n", strdup(s1));
+//   printf("%s\n", ft_strdup(s1));
+//   printf("%s\n", strdup(s1));
 
-}
-
-
+// }
 // char *variable;
 // variable = malloc(sizeof(char) * (len + 1));
 // char *variable;

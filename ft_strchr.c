@@ -6,7 +6,7 @@
 /*   By: kczichow <kczichow@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/25 11:46:33 by kczichow          #+#    #+#             */
-/*   Updated: 2022/03/30 12:56:50 by kczichow         ###   ########.fr       */
+/*   Updated: 2022/03/31 10:51:16 by kczichow         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,16 +28,16 @@ char	*ft_strchr(const char *str, int c)
 		}
 		i++;
 	}
-	if (str[i] == '\0')
-		return (NULL);
+	if (c == 0)
+		return ((char *)str + ft_strlen(str));
 	return (NULL);
 }
 
-// int	main()
+// int	main() 
 // {
 // 	const char str1[20] = "Hello 42";
 // 	int a;
-// 	a = 'l';
+// 	a = 0;
 
 // 	printf("%s\n", ft_strchr(str1, a));
 

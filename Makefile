@@ -6,7 +6,7 @@
 #    By: kczichow <kczichow@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/28 16:16:50 by kczichow          #+#    #+#              #
-#    Updated: 2022/03/30 14:57:00 by kczichow         ###   ########.fr        #
+#    Updated: 2022/03/31 13:17:07 by kczichow         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,7 +35,9 @@ FUNCTIONS	= ft_isalpha.c \
 				ft_memchr.c \
 				ft_memcmp.c \
 				ft_strnstr.c \
-				ft_atoi.c
+				ft_atoi.c \
+				ft_calloc.c \
+				ft_strdup.c
 				
 # the following rule creates .o files from the .c input files
 OBJS	=	${FUNCTIONS:.c=.o}

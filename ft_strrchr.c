@@ -6,7 +6,7 @@
 /*   By: kczichow <kczichow@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/25 13:52:04 by kczichow          #+#    #+#             */
-/*   Updated: 2022/03/30 12:59:41 by kczichow         ###   ########.fr       */
+/*   Updated: 2022/03/31 11:03:05 by kczichow         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ char	*ft_strrchr(const char *str, int c)
 		i++;
 	}
 	i++;
-	while (i > 0)
+	while (i >= 0)
 	{
 		if ((char)c == str[i])
 		{
@@ -38,7 +38,7 @@ char	*ft_strrchr(const char *str, int c)
 
 // int main()
 // {
-// 	const char str1[20] = "Hello 42";
+// 	const char str1[20] = "Hello 42"; 
 // 	int a;
 // 	a = 'l';
 
