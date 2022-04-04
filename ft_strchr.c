@@ -6,7 +6,7 @@
 /*   By: kczichow <kczichow@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/25 11:46:33 by kczichow          #+#    #+#             */
-/*   Updated: 2022/03/31 10:51:16 by kczichow         ###   ########.fr       */
+/*   Updated: 2022/04/04 14:41:41 by kczichow         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 // locate the first occurence of c in string str, whereas the terminating
 // null is considered part of the string; int i is converted to char;
+// The functions strchr() and strrchr() return a pointer to the located
+// character, or NULL if the character does not appear in the string.
 
 char	*ft_strchr(const char *str, int c)
 {

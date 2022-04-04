@@ -1,45 +1,52 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_substr.c                                        :+:      :+:    :+:   */
+/*   ft_substr_copy.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kczichow <kczichow@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/01 10:02:58 by kczichowsky       #+#    #+#             */
-/*   Updated: 2022/04/04 14:02:32 by kczichow         ###   ########.fr       */
+/*   Updated: 2022/04/04 12:31:31 by kczichow         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-// Allocates (with malloc(3)) and returns a substring from the string ’s’.
-// The substring begins at index ’start’ and is of maximum size ’len’.
+// 
 
 char	*ft_substr(char const	*s, unsigned int	start, size_t	len)
 {
-	char	*substr;
+	const char		*substr;
+	unsigned int	i;
 	size_t 	slen;
 	slen = ft_strlen(s);
 
 	if(s == NULL)
 		return (NULL);
+
 	if(slen < len + (size_t)start)
 		len = slen - (size_t)start;
-	substr = malloc(sizeof(char const *) * (len + 1));
+
+	substr = malloc(sizeof(char const *) * len);
 	if (substr == NULL)
 		return (NULL);
-
-	ft_memcpy((char *)substr, (char *)s+start, len);
-		substr[len+1] ='\0';
-		return ((char *)substr);
+	i = 0; 
+	while (s[i] != '\0' && (size_t)start < slen)
+	{
+		ft_memcpy((char *)substr, (char *)s+start, len);
+		{
+			return ((char *)substr);
+			i++;
+		}	
+	}
 	return (NULL);
 }
 
 // int main ()
 // {
 //     char const str[] = "Dies ist ein Test";
-//     unsigned int start = 17;
-//     size_t  len = 5;
+//     unsigned int start = 5;
+//     size_t  len = 0;
 
 //     printf("%s\n", ft_substr(str, start, len));
 

@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: kczichowsky <kczichowsky@student.42.fr>    +#+  +:+       +#+         #
+#    By: kczichow <kczichow@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/28 16:16:50 by kczichow          #+#    #+#              #
-#    Updated: 2022/04/01 11:52:29 by kczichowsky      ###   ########.fr        #
+#    Updated: 2022/04/04 14:48:22 by kczichow         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -39,7 +39,9 @@ FUNCTIONS	= ft_isalpha.c \
 				ft_atoi.c \
 				ft_calloc.c \
 				ft_strdup.c \
-				ft_strjoin.c
+				ft_substr.c \
+				ft_strjoin.c \
+				ft_strtrim.c
 				
 # the following rule creates .o files from the .c input files
 OBJS	=	${FUNCTIONS:.c=.o}

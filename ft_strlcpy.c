@@ -6,13 +6,13 @@
 /*   By: kczichow <kczichow@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/23 14:23:48 by kczichow          #+#    #+#             */
-/*   Updated: 2022/03/31 13:30:54 by kczichow         ###   ########.fr       */
+/*   Updated: 2022/04/04 13:04:15 by kczichow         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-// kann im Moment die Funktion nicht aus der Lib aufrufen, Warum?
+// 
 
 size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 {

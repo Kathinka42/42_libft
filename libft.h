@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kczichowsky <kczichowsky@student.42.fr>    +#+  +:+       +#+        */
+/*   By: kczichow <kczichow@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/28 19:30:58 by kczichow          #+#    #+#             */
-/*   Updated: 2022/04/01 11:53:36 by kczichowsky      ###   ########.fr       */
+/*   Updated: 2022/04/04 14:48:20 by kczichow         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,5 +42,7 @@ int		ft_atoi(const char *str);
 void	*ft_calloc(size_t	count, size_t	size);
 char	*ft_strdup(const char *s1);
 char	*ft_substr(char const   *s, unsigned int	start, size_t	len);
+char	*ft_strjoin(char const	*s1, char const	*s2);
+char	*ft_strtrim(char const *s1, char const *set);
 
 #endif
