@@ -3,45 +3,52 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kczichow <kczichow@student.42.fr>          +#+  +:+       +#+        */
+/*   By: kczichowsky <kczichowsky@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/04 09:25:56 by kczichow          #+#    #+#             */
-/*   Updated: 2022/04/04 15:14:55 by kczichow         ###   ########.fr       */
+/*   Updated: 2022/04/05 13:24:26 by kczichowsky      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 // returns a copy of ’s1’ with the characters specified in ’set’ removed
-// from the beginning and the end of the string.
+// from the beginning and the end of the string, without whitespaces at the
+// beginning or at the end of the string. If s has no whitespaces at the
+// beginning or the end, the function returns a copy of s. If the allocation
+// fails the function returns NULL.
+// !set is the same like set==0;
 
 char	*ft_strtrim(char const *s1, char const *set)
 {
-	char *s1_trim;
 	size_t 	i;
+	size_t	len;
 	
+	if(!s1 || !set)
+		return ((char *)s1);
+	while (*s1 == ' ' || *s1 == '\n' || *s1 == '\t')
+		s1++;
 	i = 0;
-	s1_trim = malloc(sizeof(char *) * ft_strlen(s1));
-	if(s1_trim == NULL)
-		return (NULL);
-
-	s1_trim = (char *)s1;
-	while (i < ft_strlen(set))
-	{
-		ft_strchr(s1_trim, (int)set[i]);
+	while (s1[i] && ft_strchr(set, s1[i]))
 		i++;
-		s1_trim++;
-	}
-	while ((ft_strlen(set)+1))
-		ft_strchr(s1_trim, (int)set[ft_strlen(s1_trim)])
+	// printf("%zu\n", i);
+	len = ft_strlen((char *)s1);
+	//printf("%zu\n", len);
 
-	return (s1_trim);
+	while (len>i && ft_strchr(set, s1[len-1]))
+		len--;
+	//printf("%s\n", s1);
+	printf("%zu\n", len);
+	
+	//printf("s\n", ft_substr(s1, 0, len+1));
+	return (ft_substr(s1,i,len-i));
 }
 
 // int	main()
 // {
-// 	char const s1[30] = "Dies ist ein Test";
-// 	char const set[30] = "Diest";
+// 	char const s1[30] = "12345678901234";
+// 	char const set[30] = "124321";
 
 // 	printf("%s\n", ft_strtrim(s1, set));
+// 	//ft_strtrim(s1, set);
 // }

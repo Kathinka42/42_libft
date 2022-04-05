@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: kczichow <kczichow@student.42.fr>          +#+  +:+       +#+         #
+#    By: kczichowsky <kczichowsky@student.42.fr>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/28 16:16:50 by kczichow          #+#    #+#              #
-#    Updated: 2022/04/04 14:48:22 by kczichow         ###   ########.fr        #
+#    Updated: 2022/04/05 11:27:06 by kczichowsky      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
