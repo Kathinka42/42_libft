@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kczichow <kczichow@student.42.fr>          +#+  +:+       +#+        */
+/*   By: kczichowsky <kczichowsky@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/06 10:07:35 by kczichow          #+#    #+#             */
-/*   Updated: 2022/04/06 17:43:11 by kczichow         ###   ########.fr       */
+/*   Updated: 2022/04/06 22:39:34 by kczichowsky      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 // splitting ’s’ using the character ’c’ as a delimiter. The array must end
 // with a NULL pointer.
 
-static int count_words(const char *s, char c)
+static int count_delim(const char *s, char c)
 {
 	size_t count;
 	int	i;
@@ -36,10 +36,10 @@ char *word_dup(const char *str, size_t index, unsigned int start)
 {
 	size_t			len;
 
-	len = (ft_strlen(&str[start]) - ft_strlen(&str[index])+1);
-	printf("%zu\n", len);
-	//printf("%s\n", ft_substr(str, start-1, len));
-	return (ft_substr(str, start-1, len));
+	len = index - start;
+	//printf("%zu\n", len);
+	printf("%s\n", ft_substr(str, start, len));
+	return (ft_substr(str, start, len));
 }
 
 char	**ft_split(char const *s, char c)
@@ -57,24 +57,31 @@ char	**ft_split(char const *s, char c)
 		return (NULL);
 	// if (c == '\0')
 	// 	return (NULL);
-
-	res = malloc(sizeof(char*) * ((ft_strlen(s)+1) + (count_words(s, c))));
+	// if (count_delim(s, c) == 0)
+	// 	return (s);
+		
+	res = malloc(sizeof(char) * ((ft_strlen(s)+1) + (count_delim(s, c))));
 	if (res == NULL)
 		return (NULL);
 
-	if (i == 0)
-		res[j] = word_dup(s, i, start);
-	i++;
-	j++;
+	// if (i == 0)
+	// 	res[j] = word_dup(s, i, start);
+	// i++;
+	// j++;
+	
 	while (s[i] != '\0')
 	{
-		if (s[i] == c)
+		if (s[i] != c)
+			i++;
+		else
+		{
 			res[j] = word_dup(s, i, start);
 			j++;
-			start = i;
-		i++;
-		//printf("%zu\n", i);
+			start = i+1;
+			i++;
+		}
 	}
+	res[j] = word_dup(s, ft_strlen(s), start);
 	return (res);
 }
 
