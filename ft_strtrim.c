@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kczichowsky <kczichowsky@student.42.fr>    +#+  +:+       +#+        */
+/*   By: kczichow <kczichow@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/04 09:25:56 by kczichow          #+#    #+#             */
-/*   Updated: 2022/04/05 13:24:26 by kczichowsky      ###   ########.fr       */
+/*   Updated: 2022/04/06 10:06:43 by kczichow         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,27 +21,20 @@
 
 char	*ft_strtrim(char const *s1, char const *set)
 {
-	size_t 	i;
+	size_t	i;
 	size_t	len;
-	
-	if(!s1 || !set)
+
+	if (!s1 || !set)
 		return ((char *)s1);
 	while (*s1 == ' ' || *s1 == '\n' || *s1 == '\t')
 		s1++;
 	i = 0;
 	while (s1[i] && ft_strchr(set, s1[i]))
 		i++;
-	// printf("%zu\n", i);
 	len = ft_strlen((char *)s1);
-	//printf("%zu\n", len);
-
-	while (len>i && ft_strchr(set, s1[len-1]))
+	while (len > i && ft_strchr(set, s1[len - 1]))
 		len--;
-	//printf("%s\n", s1);
-	printf("%zu\n", len);
-	
-	//printf("s\n", ft_substr(s1, 0, len+1));
-	return (ft_substr(s1,i,len-i));
+	return (ft_substr(s1, i, len - i));
 }
 
 // int	main()

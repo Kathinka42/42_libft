@@ -6,7 +6,7 @@
 /*   By: kczichow <kczichow@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/01 10:02:58 by kczichowsky       #+#    #+#             */
-/*   Updated: 2022/04/04 14:02:32 by kczichow         ###   ########.fr       */
+/*   Updated: 2022/04/06 09:21:27 by kczichow         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,23 +15,28 @@
 // Allocates (with malloc(3)) and returns a substring from the string ’s’.
 // The substring begins at index ’start’ and is of maximum size ’len’.
 
-char	*ft_substr(char const	*s, unsigned int	start, size_t	len)
+char	*ft_substr(char const	*s, unsigned int start, size_t	len)
 {
 	char	*substr;
-	size_t 	slen;
-	slen = ft_strlen(s);
+	size_t	slen;
 
-	if(s == NULL)
+	slen = ft_strlen(s);
+	if (s == NULL)
 		return (NULL);
-	if(slen < len + (size_t)start)
+	if (start > slen)
+	{
+		substr = malloc(sizeof(char) * (len + 1));
+		*substr = '\0';
+		return (substr);
+	}
+	if (slen < len + (size_t)start)
 		len = slen - (size_t)start;
-	substr = malloc(sizeof(char const *) * (len + 1));
+	substr = malloc(sizeof(char) * (len + 1));
 	if (substr == NULL)
 		return (NULL);
-
-	ft_memcpy((char *)substr, (char *)s+start, len);
-		substr[len+1] ='\0';
-		return ((char *)substr);
+	ft_memcpy((char *)substr, (char *)s + start, len);
+		substr[len] = '\0';
+	return ((char *)substr);
 	return (NULL);
 }
 

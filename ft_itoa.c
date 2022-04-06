@@ -1,34 +1,51 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kczichow <kczichow@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/22 11:44:29 by kczichow          #+#    #+#             */
-/*   Updated: 2022/04/06 11:46:34 by kczichow         ###   ########.fr       */
+/*   Created: 2022/04/06 10:16:19 by kczichow          #+#    #+#             */
+/*   Updated: 2022/04/06 17:59:47 by kczichow         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlen(const char *str)
+static int	int_is_negative(int *n, int *negative)
 {
+	if (n < 0)
+	{
+		*n *= -1;
+		*negative = 1;
+	}
+}
+char	*ft_itoa(int n)
+{
+	char *res;
 	size_t	i;
+	size_t	len;
 
 	i = 0;
-	while (str[i] != '\0')
-		i++;
-	return (i);
+	if (n == -2147483648)
+		return (ft_strdup("-2147483648"))
+	if (n < 0)
+	 {
+		res[0] = "-";
+		n = -n;
+		i++; 
+	}
+	if (n > 9)
+		printf("%d\n", n);
+		ft_itoa(n/10);
+	if (n >= '0' && n <= '9')
+	 	res[i] = n + '0';
+		 i++;
+	return (res);
 }
 
-// int	main()
-// {
-// 	const char str1[20] = "";
-// 	printf("%zu\n", ft_strlen(str1));
-
-// 	const char str2[20] = "";
-// 	printf("%zu\n", strlen(str2));
-
-// 	return(0); 
-// }
+int main()
+{
+	int n = 120;
+	ft_itoa(n);
+}
