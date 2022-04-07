@@ -6,7 +6,7 @@
 /*   By: kczichow <kczichow@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/28 20:08:52 by kczichow          #+#    #+#             */
-/*   Updated: 2022/03/31 10:35:17 by kczichow         ###   ########.fr       */
+/*   Updated: 2022/04/07 15:09:19 by kczichow         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,12 +23,11 @@ int	ft_memcmp(const void *str1, const void *str2, size_t	n)
 	if (n == 0)
 		return (0);
 	i = 0;
-	while ((i < (n - 1)) && str3[i] != '\0' && str4[i] != '\0')
+	while (i < (n-1))
 	{
-		if (str3[i] == str4[i])
-		i++;
-		else
+		if (str3[i] != str4[i])
 			return (str3[i] - str4[i]);
+		i++;
 	}
 	return (str3[i] - str4[i]);
 }

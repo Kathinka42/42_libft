@@ -6,7 +6,7 @@
 /*   By: kczichow <kczichow@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/01 10:02:58 by kczichowsky       #+#    #+#             */
-/*   Updated: 2022/04/06 09:21:27 by kczichow         ###   ########.fr       */
+/*   Updated: 2022/04/07 15:20:00 by kczichow         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,11 +24,7 @@ char	*ft_substr(char const	*s, unsigned int start, size_t	len)
 	if (s == NULL)
 		return (NULL);
 	if (start > slen)
-	{
-		substr = malloc(sizeof(char) * (len + 1));
-		*substr = '\0';
-		return (substr);
-	}
+		return (ft_strdup(""));
 	if (slen < len + (size_t)start)
 		len = slen - (size_t)start;
 	substr = malloc(sizeof(char) * (len + 1));
