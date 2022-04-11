@@ -6,12 +6,19 @@
 /*   By: kczichow <kczichow@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/30 09:02:26 by kczichow          #+#    #+#             */
-/*   Updated: 2022/03/31 13:34:07 by kczichow         ###   ########.fr       */
+/*   Updated: 2022/04/11 12:57:05 by kczichow         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 // convert ASCII string to integer, ignore leading whitespaces;
 #include "libft.h"
+
+/**
+ * @brief 
+ * 
+ * @param str 
+ * @return int 
+ */
 
 int	ft_atoi(const char *str)
 {

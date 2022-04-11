@@ -1,33 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*   ft_lstlast.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kczichow <kczichow@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/23 10:55:08 by kczichow          #+#    #+#             */
-/*   Updated: 2022/04/11 12:38:10 by kczichow         ###   ########.fr       */
+/*   Created: 2022/04/11 16:21:55 by kczichow          #+#    #+#             */
+/*   Updated: 2022/04/11 16:26:44 by kczichow         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-// Function allocates memory like malloc, but deletes everything that might
-// already be written in there; 
-
-void	*ft_calloc(size_t	count, size_t	size)
+/**
+ * @brief lst: The beginning of the list. Returns the last node of the list;
+ * 
+ * @param lst 
+ * @return t_list*; Last node of the list 
+ */
+t_list	*ft_lstlast(t_list *lst)
 {
-	void	*ptr;
-	
-	ptr = malloc(count * size);
-	if (ptr == NULL)
-		return (NULL);
-	ft_bzero(ptr, (count * size));
-	return (ptr);
-}
+	int		count;
+	t_list	*pos;
 
-// int main ()
-// {
-// 	size_t	count1;
-// 	size_t	size;
-// }
+	while(pos != NULL)
+	{
+		pos->next = pos;
+		count++;
+	}
+	return 
+}

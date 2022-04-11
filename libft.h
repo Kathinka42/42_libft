@@ -6,7 +6,7 @@
 /*   By: kczichow <kczichow@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/28 19:30:58 by kczichow          #+#    #+#             */
-/*   Updated: 2022/04/07 14:58:16 by kczichow         ###   ########.fr       */
+/*   Updated: 2022/04/11 17:50:50 by kczichow         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,12 @@
 # include <ctype.h>
 # include <stdlib.h>
 # include <unistd.h>
+
+typedef struct  s_list
+{
+void			*content;
+struct s_list   *next;
+} t_list;
 
 int		ft_isalpha(int i);
 int		ft_isdigit(int i);
@@ -42,11 +48,21 @@ char	*ft_strnstr(const char	*haystack, const char	*needle, size_t	len);
 int		ft_atoi(const char *str);
 void	*ft_calloc(size_t	count, size_t	size);
 char	*ft_strdup(const char *s1);
+
 char	*ft_substr(char const   *s, unsigned int	start, size_t	len);
 char	*ft_strjoin(char const	*s1, char const	*s2);
 char	*ft_strtrim(char const *s1, char const *set);
+char    **ft_split(char const *s, char c);
 char	*ft_itoa(int n);
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 void	ft_putchar_fd(char c, int fd);
+void	ft_putstr_fd(char *s, int fd);
+void	ft_putendl_fd(char *s, int fd);
 
+t_list	*ft_lstnew(void *content);
+void	ft_lstadd_front(t_list **lst, t_list *new);
+int		ft_lstsize(t_list *lst);
 #endif
+
+
+

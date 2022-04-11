@@ -3,15 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kczichowsky <kczichowsky@student.42.fr>    +#+  +:+       +#+        */
+/*   By: kczichow <kczichow@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/08 09:06:32 by kczichowsky       #+#    #+#             */
-/*   Updated: 2022/04/08 10:09:13 by kczichowsky      ###   ########.fr       */
+/*   Updated: 2022/04/11 10:20:08 by kczichow         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
 
 size_t	count_word(char const *s, char c)
 {
@@ -31,31 +30,37 @@ size_t	count_word(char const *s, char c)
 	}
 	return (count);
 }
-char *print_word(char const *s, char c)
+
+char	*print_word(char const *word, char c)
 {
-	size_t	i;
-	size_t	k;
-	char	*dup;
+	size_t	len;
+	char	*new_word;
 
-	i = 0;
-	k = 0;
-	dup = ft_strdup(s);
-	//printf("%s\n", s);
-
-	while (s[i] == c && s[i] != '\0')
-		i++;
-	//printf("%s\n", s);
-	while (s[i] != c && s[i] != '\0')
-	{
-		dup[k] = s[i];
-		i++;
-		k++;
-	}
-	dup[k] = '\0';
-	return (dup);
+	len = 0;
+	while (word[len] != c && word[len] != '\0')
+		len++;
+	new_word = ft_substr(word, 0, len + 1);
+	if (new_word != NULL)
+		new_word[len] = '\0';
+	return (new_word);
 }
 
-char **ft_split(char const *s, char c)
+void	clean(char **res, size_t j)
+{
+	size_t	count;
+
+	count = 0;
+	if (res[j] == NULL)
+	{
+		while (count < j)
+		{
+			free(res[count]);
+			count++;
+		}
+	}	
+}
+
+char	**ft_split(char const *s, char c)
 {
 	char	**res;
 	size_t	i;
@@ -65,34 +70,30 @@ char **ft_split(char const *s, char c)
 	j = 0;
 	if (s == NULL)
 		return (NULL);
-	res = malloc(sizeof(char *) * (count_word(s, c))+1);
+	res = ft_calloc(sizeof(char *), count_word(s, c) + 1);
 	if (res == NULL)
-		return (s);
-	while (j < count_word(s,c))
+		return (res);
+	while (j < count_word(s, c))
 	{
 		while (s[i] == c && s[i] != '\0')
 			i++;
-		if (s[i] != c && s[i] != '\0')
-		{
-			res[j] = print_word(&s[i], c);
-		}	
+		res[j] = print_word(s + i, c);
+		clean (res, j);
 		while (s[i] != c && s[i] != '\0')
 			i++;
-		printf("%zu\n", j);
-		i++;
-	j++;	
+		j++;
 	}
-	//res[j] = '\0';
+	res[j] = NULL;
 	return (res);
 }
 
-int main()
-{
-	char const s[40] = "  Hallo 42, hier    bin ich.";
-	char c;
-	c = ' ';
+// int main()
+// {
+// 	char const s[40] = "  Hallo 42, hier    bin ich.";
+// 	char c;
+// 	c = ' ';
 
-	printf("%zu\n", count_word(s, c));
-	printf("%s\n", print_word(s, c));
-	return (0);
-}
+// 	printf("%zu\n", count_word(s, c));
+// 	ft_split(s, c);
+// 	return (0);
+// }

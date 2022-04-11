@@ -6,7 +6,7 @@
 /*   By: kczichow <kczichow@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/23 10:55:08 by kczichow          #+#    #+#             */
-/*   Updated: 2022/03/31 13:00:03 by kczichow         ###   ########.fr       */
+/*   Updated: 2022/04/11 12:46:12 by kczichow         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@ void	*ft_bzero(void *str, size_t len)
 	size_t	i;
 
 	i = 0;
+	if (str == NULL)
+		return (NULL);
 	while (i < len)
 	{
 		((char *)str)[i] = '\0';

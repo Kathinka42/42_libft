@@ -1,33 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kczichow <kczichow@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/23 10:55:08 by kczichow          #+#    #+#             */
-/*   Updated: 2022/04/11 12:38:10 by kczichow         ###   ########.fr       */
+/*   Created: 2022/04/11 17:48:18 by kczichow          #+#    #+#             */
+/*   Updated: 2022/04/11 17:55:35 by kczichow         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-// Function allocates memory like malloc, but deletes everything that might
-// already be written in there; 
-
-void	*ft_calloc(size_t	count, size_t	size)
+void	ft_putendl_fd(char *s, int fd)
 {
-	void	*ptr;
-	
-	ptr = malloc(count * size);
-	if (ptr == NULL)
-		return (NULL);
-	ft_bzero(ptr, (count * size));
-	return (ptr);
+	ft_putstr_fd(s, fd);
+	ft_putchar_fd('\n', fd);
 }
-
-// int main ()
-// {
-// 	size_t	count1;
-// 	size_t	size;
-// }
