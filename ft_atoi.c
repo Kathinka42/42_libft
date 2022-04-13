@@ -3,23 +3,30 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kczichow <kczichow@student.42.fr>          +#+  +:+       +#+        */
+/*   By: kczichowsky <kczichowsky@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/30 09:02:26 by kczichow          #+#    #+#             */
-/*   Updated: 2022/04/11 12:57:05 by kczichow         ###   ########.fr       */
+/*   Updated: 2022/04/12 11:35:41 by kczichowsky      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-// convert ASCII string to integer, ignore leading whitespaces;
 #include "libft.h"
 
 /**
- * @brief 
+ * @brief convert ASCII string to integer, ignore leading whitespaces;
  * 
  * @param str 
  * @return int 
  */
+static int	set_sign(const char *str, int i)
+{
+	int	sign;
 
+	sign = 1;
+	if (str[i] == '-')
+			sign = sign * (-1);
+	return (sign);
+}
 int	ft_atoi(const char *str)
 {
 	int	i;
@@ -27,20 +34,12 @@ int	ft_atoi(const char *str)
 	int	number;
 
 	i = 0;
-	sign = 1;
-	while (str[i] == 9 || str[i] == 10 || str[i] == 11 || str[i] == 12
-		|| str[i] == 13)
+	while (str[i] != '\0' && (str[i] == ' ' || str[i] == '\t' || str[i] == '\n'
+			|| str[i] == '\r' || str[i] == '\v' || str[i] == '\f'))
 		i++;
-	if (str[i] == '-')
-	{
-		sign = sign * (-1);
+	sign = set_sign(str, i);
+	if (str[i] == '-' || str[i] == '+')
 		i++;
-	}
-	else
-	{
-		if (str[i] == '+')
-			i++;
-	}
 	number = 0;
 	while (str[i] >= '0' && str[i] <= '9')
 	{

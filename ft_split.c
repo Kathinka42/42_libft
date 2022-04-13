@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kczichow <kczichow@student.42.fr>          +#+  +:+       +#+        */
+/*   By: kczichowsky <kczichowsky@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/08 09:06:32 by kczichowsky       #+#    #+#             */
-/*   Updated: 2022/04/11 10:20:08 by kczichow         ###   ########.fr       */
+/*   Updated: 2022/04/12 11:36:09 by kczichowsky      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	count_word(char const *s, char c)
+static size_t	count_word(char const *s, char c)
 {
 	size_t	count;
 	size_t	i;
@@ -31,7 +31,7 @@ size_t	count_word(char const *s, char c)
 	return (count);
 }
 
-char	*print_word(char const *word, char c)
+static char	*print_word(char const *word, char c)
 {
 	size_t	len;
 	char	*new_word;
@@ -45,7 +45,7 @@ char	*print_word(char const *word, char c)
 	return (new_word);
 }
 
-void	clean(char **res, size_t j)
+static void	clean(char **res, size_t j)
 {
 	size_t	count;
 

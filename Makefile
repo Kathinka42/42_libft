@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: kczichow <kczichow@student.42.fr>          +#+  +:+       +#+         #
+#    By: kczichowsky <kczichowsky@student.42.fr>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/28 16:16:50 by kczichow          #+#    #+#              #
-#    Updated: 2022/04/11 17:50:47 by kczichow         ###   ########.fr        #
+#    Updated: 2022/04/12 12:06:02 by kczichowsky      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -43,10 +43,12 @@ FUNCTIONS	= ft_isalpha.c \
 				ft_strjoin.c \
 				ft_strtrim.c \
 				ft_split.c \
+				ft_itoa.c \
 				ft_strmapi.c \
 				ft_putchar_fd.c \
 				ft_putstr_fd.c \
-				ft_putendl_fd.c
+				ft_putendl_fd.c \
+				ft_putnbr_fd.c 
 				
 FUNCTIONS_BONUS = ft_lstnew.c \
 				ft_lstadd_front.c \

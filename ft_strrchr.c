@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kczichow <kczichow@student.42.fr>          +#+  +:+       +#+        */
+/*   By: kczichowsky <kczichowsky@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/25 13:52:04 by kczichow          #+#    #+#             */
-/*   Updated: 2022/03/31 11:03:05 by kczichow         ###   ########.fr       */
+/*   Updated: 2022/04/12 11:10:42 by kczichowsky      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 // locate the last occurence of c in string str, whereas the terminating
 // null is considered part of the string; int i is converted to char;
+// The functions strchr() and strrchr() return a pointer to the located
+// character, or NULL if the character does not appear in the string.
 
 char	*ft_strrchr(const char *str, int c)
 {
@@ -24,7 +26,6 @@ char	*ft_strrchr(const char *str, int c)
 	{
 		i++;
 	}
-	i++;
 	while (i >= 0)
 	{
 		if ((char)c == str[i])
@@ -33,11 +34,13 @@ char	*ft_strrchr(const char *str, int c)
 		}
 	i--;
 	}
-	return (0);
+	if (c == 0)
+		return ((char *)str + ft_strlen(str));
+	return (NULL);
 }
 
 // int main()
-// {
+// { 
 // 	const char str1[20] = "Hello 42"; 
 // 	int a;
 // 	a = 'l';

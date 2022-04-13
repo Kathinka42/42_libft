@@ -6,7 +6,7 @@
 /*   By: kczichowsky <kczichowsky@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/23 14:19:54 by kczichow          #+#    #+#             */
-/*   Updated: 2022/04/11 06:39:22 by kczichowsky      ###   ########.fr       */
+/*   Updated: 2022/04/12 10:04:50 by kczichowsky      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,20 +66,98 @@ size_t	ft_strlcat(char	*dst, const char	*src, size_t	dstsize)
 	dst[i] = '\0';
 	return (origdstsize + ft_strlen(src));
 }
+size_t	ft_strlcat(char	*dst, const char	*src, size_t	size)
+{
+	size_t	i;
+	size_t	dst_len;
+	size_t	src_len;
 
-// int main()
-// {
-//     const char  src[] = "12345678";
-//     char dst[20] = "AAA";
-//     size_t dstsize = 20;
+	i = 0;
+	dst_len = ft_strlen(dst);
+	src_len = ft_strlen(src);
+	printf("%zu\n", dst_len);
+	printf("%zu\n", size);
 
-//     printf("%zu\n", ft_strlcat(dst, src, dstsize));
+	while (src[i] != '\0' && (dst_len + 1) < size)
+	{
+		dst[dst_len] = (char)src[i];
+		dst_len++;
+		i++;
+		printf("%zu\n", dst_len);
+		printf("%zu\n", size);
+	}
+	if (dst_len < size && size != 0)
+		dst[i] = '\0';
+	
+	printf("%s\n", dst);
+	if (size > ft_strlen(dst))
+		return (dst_len + src_len);
+	else
+		return (size + src_len);
+}
+size_t	ft_strlcat(char	*dst, const char	*src, size_t	dstsize)
+{
+	size_t	len_dst;
+	size_t	len_src;
 
-// 	const char  src1[] = "12345678";
-//     char dst1[20] = "AAA";
-//     size_t dstsize1 = 20;
+	len_dst = ft_strlen(dst);
+	len_src = ft_strlen(src);
+	if (dstsize == 0)
+		return (len_src);
+	if (dstsize <= len_dst)
+		return (dstsize + len_src);
+	
+	ft_memcpy((dst + len_dst), src, (dstsize - len_dst - 1));
+	//dst[dstsize + 1] = '\0';
 
-//     printf("%zu\n", strlcat(dst1, src1, dstsize1));
+		
+	// if (ft_strlen(dst) >= dstsize + 1)
+	// 	ft_memcpy((dst + len_dst), src, (dstsize - len_dst - 1));
+	// else if (ft_strlen(dst) < dstsize)
+	// 	ft_memcpy((dst + len_dst), src, )
 
-//     return (0);
-// }
+	return (len_dst + len_src);
+}
+size_t	ft_strlcat(char	*dst, const char	*src, size_t	dstsize)
+{
+	size_t	len_dst;
+	size_t	len_src;
+
+	len_dst = ft_strlen(dst);
+	len_src = ft_strlen(src);
+
+	if (dstsize <= len_dst)
+		return (dstsize + len_src);
+	ft_memcpy((dst + len_dst), src, (dstsize - len_dst - 1));
+		return (len_dst + len_src);x
+	dst[len_dst+len_src + 1] = '\0';
+		
+		
+	//dst[dstsize + 1] = '\0';
+
+		
+	// if (ft_strlen(dst) >= dstsize + 1)
+	// 	ft_memcpy((dst + len_dst), src, (dstsize - len_dst - 1));
+	// else if (ft_strlen(dst) < dstsize)
+	// 	ft_memcpy((dst + len_dst), src, )
+
+	return (len_dst + len_src);
+}
+
+
+int main()
+{
+    const char  src[] = "12345678";
+    char dst[20] = "AAA";
+    size_t dstsize = 20;
+
+    printf("%zu\n", ft_strlcat(dst, src, dstsize));
+
+	const char  src1[] = "12345678";
+    char dst1[20] = "AAA";
+    size_t dstsize1 = 20;
+
+    printf("%zu\n", strlcat(dst1, src1, dstsize1));
+
+    return (0);
+}
