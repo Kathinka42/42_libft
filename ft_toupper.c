@@ -6,15 +6,19 @@
 /*   By: kczichow <kczichow@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/25 10:54:24 by kczichow          #+#    #+#             */
-/*   Updated: 2022/03/30 11:54:03 by kczichow         ###   ########.fr       */
+/*   Updated: 2022/04/13 13:10:53 by kczichow         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+// convert lower-case letter to upper-case letter if there is any; else return
+// parameter
+// ASCII: 'a' = 97, 'z' = 122;
+
 int	ft_toupper(int c)
 {
-	if (c >= 'a' && c <= 'z')
+	if (c >= 97 && c <= 122)
 		return (c - 32);
 	return (c);
 }

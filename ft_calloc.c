@@ -6,7 +6,7 @@
 /*   By: kczichow <kczichow@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/23 10:55:08 by kczichow          #+#    #+#             */
-/*   Updated: 2022/04/11 12:38:10 by kczichow         ###   ########.fr       */
+/*   Updated: 2022/04/13 12:58:24 by kczichow         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 void	*ft_calloc(size_t	count, size_t	size)
 {
 	void	*ptr;
-	
+
 	ptr = malloc(count * size);
 	if (ptr == NULL)
 		return (NULL);

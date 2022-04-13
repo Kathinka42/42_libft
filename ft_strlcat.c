@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kczichowsky <kczichowsky@student.42.fr>    +#+  +:+       +#+        */
+/*   By: kczichow <kczichow@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/23 14:19:54 by kczichow          #+#    #+#             */
-/*   Updated: 2022/04/12 10:49:20 by kczichowsky      ###   ########.fr       */
+/*   Updated: 2022/04/13 12:57:41 by kczichow         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,29 +22,26 @@
 // is equal to the size of the dst buffer, which caps the number of characters
 // copied to this size, minus one for the null character.
 
-size_t	ft_strlcat(char	*dst, const char	*src, size_t	dstsize)
+size_t	ft_strlcat(char *dest, const char *src, size_t dstsize)
 {
-	size_t	dstlen;
+	size_t	i;
+	size_t	destlen;
 	size_t	srclen;
 
-	dstlen = ft_strlen(dst);
+	i = 0;
+	destlen = ft_strlen(dest);
 	srclen = ft_strlen(src);
-
-	if (dstsize <= dstlen)
+	if (destlen >= dstsize)
 		return (dstsize + srclen);
-	
-	if ((dstsize - dstlen - 1) > srclen)
+	while (src[i] && (destlen + i) < (dstsize - 1))
 	{
-		ft_memcpy(dst + dstlen, src, srclen);
-		dst[dstlen + srclen] = '\0';
+		dest[destlen + i] = src[i];
+		i++;
 	}
-	else
-	{
-		ft_memcpy((dst + dstlen), src, (dstsize - dstlen- 1));
-		dst[dstlen + dstsize] = '\0';
-	}
-	return (dstlen + srclen);
+	dest[destlen + i] = '\0';
+	return (destlen + srclen);
 }
+
 // int main()
 // {
 //     const char  src[] = "Hallo42K";

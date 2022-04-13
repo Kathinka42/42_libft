@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kczichowsky <kczichowsky@student.42.fr>    +#+  +:+       +#+        */
+/*   By: kczichow <kczichow@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/06 10:16:19 by kczichow          #+#    #+#             */
-/*   Updated: 2022/04/13 06:44:10 by kczichowsky      ###   ########.fr       */
+/*   Updated: 2022/04/13 10:26:36 by kczichow         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,66 +14,56 @@
 
 // Allocates (with malloc(3)) and returns a string representing the integer
 // received as an argument. Negative numbers must be handled.
-// how could the count_digits be resolved recursively?
 
-static int	count_digits(int n)
+static size_t	count_intlen(int n)
 {
-	int count;
-	
-	if(n > 0)
+	size_t	count;
+
+	count = 0;
+	if (n == 0)
+		return (1);
+	if (n < 0)
+		count++;
+	while (n)
 	{
-		count = 0;
-		while (n > 0)
-		{
-			n = n/10;
-			count++;
-		}
+		n = n / 10;
+		count++;
 	}
-	if(n < 0)
-	{
-		count = 1;
-		while (n < 0)
-		{
-			n = n/10;
-			count++;
-		}
-	}
-	printf("%d\n", count);
 	return (count);
 }
+
 char	*ft_itoa(int n)
 {
 	char	*res;
-	size_t	i;
 	size_t	intlen;
+	long	nb;
 
-	i = 0;
-	intlen = count_digits(n);
+	nb = n;
+	intlen = count_intlen(n);
 	if (n < 0)
-	{
-		n = -n;
-		i = 1;
-		//res[0] = '-';
-	}
-	res = malloc(sizeof(char) * (intlen + i));
-	if(res == NULL)
+		nb = -nb;
+	res = malloc(sizeof(char) * (intlen + 1));
+	if (res == NULL)
 		return (NULL);
-	printf("%zu\n", intlen);
-	res[intlen + i] = '\0';
+	res[intlen] = '\0';
 	while (intlen--)
 	{
-		//printf("%zu\n", intlen);
-		res[intlen] = n % 10 + '0';
-		n = n / 10;
+		res[intlen] = nb % 10 + '0';
+		nb = nb / 10;
 	}
-	if (i == 1)
+	if (n < 0)
 		res[0] = '-';
-	printf("%s\n", res);	
 	return (res);
 }
-
 // int main()
 // {
-// 	int n = 1234567890;
-// 	ft_itoa(n);
+// 	// int n = -2147483646;
+// 	int n = -214;
+// 	// int n1 = -2147483649;
+// 	// int n2 = 2147483647;
+// 	// int n3 = 2147483648;
+// 	printf("%s\n", ft_itoa(n));
+// // 	ft_itoa(n1);
+// // 	ft_itoa(n2);
+// // 	ft_itoa(n3);
 // }

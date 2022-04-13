@@ -3,21 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kczichowsky <kczichowsky@student.42.fr>    +#+  +:+       +#+        */
+/*   By: kczichow <kczichow@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/30 09:02:26 by kczichow          #+#    #+#             */
-/*   Updated: 2022/04/12 11:35:41 by kczichowsky      ###   ########.fr       */
+/*   Updated: 2022/04/13 13:21:48 by kczichow         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-/**
- * @brief convert ASCII string to integer, ignore leading whitespaces;
- * 
- * @param str 
- * @return int 
- */
+// convert ASCII string to integer, ignore leading whitespaces;
+
 static int	set_sign(const char *str, int i)
 {
 	int	sign;
@@ -27,21 +23,30 @@ static int	set_sign(const char *str, int i)
 			sign = sign * (-1);
 	return (sign);
 }
+
+static int	is_whitespace(const char *str)
+{
+	int	i;
+
+	i = 0;
+	while (str[i] != '\0' && (str[i] == ' ' || str[i] == '\t' || str[i] == '\n'
+			|| str[i] == '\r' || str[i] == '\v' || str[i] == '\f'))
+		i++;
+	return (i);
+}
+
 int	ft_atoi(const char *str)
 {
 	int	i;
 	int	sign;
 	int	number;
 
-	i = 0;
-	while (str[i] != '\0' && (str[i] == ' ' || str[i] == '\t' || str[i] == '\n'
-			|| str[i] == '\r' || str[i] == '\v' || str[i] == '\f'))
-		i++;
+	i = is_whitespace(str);
 	sign = set_sign(str, i);
 	if (str[i] == '-' || str[i] == '+')
 		i++;
 	number = 0;
-	while (str[i] >= '0' && str[i] <= '9')
+	while (ft_isdigit(str[i]) == 1)
 	{
 	number = number * 10 + str[i] - '0';
 	i++;

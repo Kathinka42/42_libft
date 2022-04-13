@@ -6,7 +6,7 @@
 /*   By: kczichow <kczichow@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/07 13:35:23 by kczichow          #+#    #+#             */
-/*   Updated: 2022/04/07 14:50:47 by kczichow         ###   ########.fr       */
+/*   Updated: 2022/04/13 17:08:03 by kczichow         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,14 +22,12 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	size_t	i;
 
 	i = 0;
-	if (s == NULL)
-		return (NULL);
-	if (f == NULL)
+	if (s == NULL || f == NULL)
 		return (NULL);
 	res = ft_strdup(s);
 	if (res == NULL)
-		return ((char *)s);
-	while (res[i] != '\0')
+		return (NULL);
+	while (s[i] != '\0')
 	{
 		res[i] = f(i, res[i]);
 		i++;

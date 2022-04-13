@@ -6,28 +6,27 @@
 /*   By: kczichow <kczichow@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/23 10:55:08 by kczichow          #+#    #+#             */
-/*   Updated: 2022/04/11 12:46:12 by kczichow         ###   ########.fr       */
+/*   Updated: 2022/04/13 14:41:50 by kczichow         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string.h>
 #include <stdio.h>
 
-// The bzero() function writes n zeroed bytes to the string str;
+// The bzero() function writes n zeroed bytes to the string str; Empty string
+// is not being considered -> segfault
 
 void	*ft_bzero(void *str, size_t len)
 {
 	size_t	i;
 
 	i = 0;
-	if (str == NULL)
-		return (NULL);
 	while (i < len)
 	{
 		((char *)str)[i] = '\0';
 		i++;
 	}
-	return (NULL);
+	return (str);
 }
 
 // int	main()

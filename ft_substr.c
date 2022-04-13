@@ -6,7 +6,7 @@
 /*   By: kczichow <kczichow@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/01 10:02:58 by kczichowsky       #+#    #+#             */
-/*   Updated: 2022/04/07 15:20:00 by kczichow         ###   ########.fr       */
+/*   Updated: 2022/04/13 17:02:09 by kczichow         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,9 @@ char	*ft_substr(char const	*s, unsigned int start, size_t	len)
 	char	*substr;
 	size_t	slen;
 
-	slen = ft_strlen(s);
 	if (s == NULL)
 		return (NULL);
+	slen = ft_strlen(s);
 	if (start > slen)
 		return (ft_strdup(""));
 	if (slen < len + (size_t)start)

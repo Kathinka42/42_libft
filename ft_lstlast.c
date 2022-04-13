@@ -6,7 +6,7 @@
 /*   By: kczichow <kczichow@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/11 16:21:55 by kczichow          #+#    #+#             */
-/*   Updated: 2022/04/11 16:26:44 by kczichow         ###   ########.fr       */
+/*   Updated: 2022/04/13 16:15:45 by kczichow         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,5 +28,5 @@ t_list	*ft_lstlast(t_list *lst)
 		pos->next = pos;
 		count++;
 	}
-	return 
+	return (NULL);
 }

@@ -6,26 +6,28 @@
 /*   By: kczichow <kczichow@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/23 09:27:34 by kczichow          #+#    #+#             */
-/*   Updated: 2022/03/30 11:13:31 by kczichow         ###   ########.fr       */
+/*   Updated: 2022/04/13 14:42:17 by kczichow         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-//void pointer can't dereferenced, therefore new pointer needs to be created;
-//The memset() function writes len bytes of value c (converted to an unsigned
-//char) to the string b.
+// The memset() function writes len bytes of value c (converted to an unsigned
+// char) to the string str1.
+// Void pointer can't dereferenced, therefore new pointer needs to be created,
+// which points to the same address like str1.
+// Empty string is not being considered, segfault;
 
 void	*ft_memset(void *str1, int c, size_t len)
 {
-	size_t	i;
-	char	*str2;
+	size_t			i;
+	unsigned char	*str2;
 
 	i = 0;
-	str2 = str1;
+	str2 = (unsigned char *)str1;
 	while (i < len)
 	{
-		str2[i] = c;
+		str2[i] = (unsigned char) c;
 		i++;
 	}
 	return (str1);

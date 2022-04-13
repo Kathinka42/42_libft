@@ -6,7 +6,7 @@
 /*   By: kczichow <kczichow@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/04 09:25:56 by kczichow          #+#    #+#             */
-/*   Updated: 2022/04/06 10:06:43 by kczichow         ###   ########.fr       */
+/*   Updated: 2022/04/13 16:55:55 by kczichow         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 	size_t	i;
 	size_t	len;
 
-	if (!s1 || !set)
+	if (s1 == NULL || set == NULL)
 		return ((char *)s1);
 	while (*s1 == ' ' || *s1 == '\n' || *s1 == '\t')
 		s1++;

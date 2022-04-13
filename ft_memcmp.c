@@ -6,11 +6,18 @@
 /*   By: kczichow <kczichow@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/28 20:08:52 by kczichow          #+#    #+#             */
-/*   Updated: 2022/04/07 15:09:19 by kczichow         ###   ########.fr       */
+/*   Updated: 2022/04/13 14:10:29 by kczichow         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+// The memcmp() function compares byte string s1 against byte string s2. Both
+// strings are assumed to be n bytes long. The memcmp() function returns zero
+// if the two strings are identical, otherwise returns the difference between
+// the first two differing bytes (treated as unsigned char values, so that
+// `\200' is greater than `\0', for example).  Zero-length strings are always
+// identical.
 
 int	ft_memcmp(const void *str1, const void *str2, size_t	n)
 {
@@ -23,13 +30,13 @@ int	ft_memcmp(const void *str1, const void *str2, size_t	n)
 	if (n == 0)
 		return (0);
 	i = 0;
-	while (i < (n-1))
+	while (i < n)
 	{
 		if (str3[i] != str4[i])
 			return (str3[i] - str4[i]);
 		i++;
 	}
-	return (str3[i] - str4[i]);
+	return (0);
 }
 
 // int	main()

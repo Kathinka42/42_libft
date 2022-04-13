@@ -6,7 +6,7 @@
 /*   By: kczichow <kczichow@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/25 11:10:27 by kczichow          #+#    #+#             */
-/*   Updated: 2022/03/30 12:48:12 by kczichow         ###   ########.fr       */
+/*   Updated: 2022/04/13 13:10:20 by kczichow         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 // convert upper-case letter to lower-case letter if there is any; else return
 // parameter
+// ASCII: 'A' = 65, 'Z' = 90;
 
 int	ft_tolower(int c)
 {

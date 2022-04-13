@@ -6,15 +6,18 @@
 /*   By: kczichow <kczichow@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/22 14:59:24 by kczichow          #+#    #+#             */
-/*   Updated: 2022/03/22 15:25:46 by kczichow         ###   ########.fr       */
+/*   Updated: 2022/04/13 11:29:42 by kczichow         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+// The isdigit() function tests for a decimal digit character.
+// ASCII '0' = 48, '9' = 57; 
+
 int	ft_isdigit(int i)
 {
-	if (i >= '0' && i <= '9')
+	if (i >= 48 && i <= 57)
 		return (1);
 	return (0);
 }

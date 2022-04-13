@@ -6,11 +6,15 @@
 /*   By: kczichow <kczichow@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/23 09:13:04 by kczichow          #+#    #+#             */
-/*   Updated: 2022/03/30 15:20:38 by kczichow         ###   ########.fr       */
+/*   Updated: 2022/04/13 11:40:44 by kczichow         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+// The isprint() function tests for any printing character, including space
+// (` ').  The value of the argument must be representable as an unsigned char
+// or the value of EOF.
 
 int	ft_isprint(int i)
 {

@@ -3,16 +3,18 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: kczichowsky <kczichowsky@student.42.fr>    +#+  +:+       +#+         #
+#    By: kczichow <kczichow@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/28 16:16:50 by kczichow          #+#    #+#              #
-#    Updated: 2022/04/12 12:06:02 by kczichowsky      ###   ########.fr        #
+#    Updated: 2022/04/13 16:53:43 by kczichow         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-# per default, the command "make" only executes the command found after "all:"; every other command needs to be called explicitly:
-# if there is a command inbetween, that creates an error, the program exits at this point;
-# the Makefile only recompiles the files where it finds updates, not all files, which leads to a higher efficiency
+# per default, the command "make" only executes the command found after "all:";
+# every other command needs to be called explicitly; if there is a command
+# inbetween, that creates an error, the program exits at this point; the
+# Makefile only recompiles the files where it finds updates, not all files,
+# which leads to a higher efficiency
 
 NAME	= libft.a
 
@@ -45,6 +47,7 @@ FUNCTIONS	= ft_isalpha.c \
 				ft_split.c \
 				ft_itoa.c \
 				ft_strmapi.c \
+				ft_striteri.c \
 				ft_putchar_fd.c \
 				ft_putstr_fd.c \
 				ft_putendl_fd.c \
@@ -60,10 +63,12 @@ OBJS_BONUS	=	${FUNCTIONS_BONUS:.c=.o}
 CC			= gcc
 CFLAGS		= -Wall -Wextra -Werror
 
-# remove files and do not display error message/ stop if it does not exist (-f);
+# remove files and do not display error message/ stop if it does not
+# exist (-f);
 RM	= rm -f
 
-# the following command changes the original underlying rule in the Makefile to compile with the flags;
+# the following command changes the original underlying rule in the
+# Makefile to compile with the flags;
 .c.o:	${CC} ${CFLAGS} -c $< -o ${<:.c=.o}
 
 # The ${OBJS} in the first line is a precondition to execute the ${NAME};

@@ -6,7 +6,7 @@
 /*   By: kczichow <kczichow@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/23 11:35:12 by kczichow          #+#    #+#             */
-/*   Updated: 2022/04/04 12:30:26 by kczichow         ###   ########.fr       */
+/*   Updated: 2022/04/13 14:56:37 by kczichow         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,20 @@
 
 //The memcpy() function copies n bytes from memory area src to memory area dst;
 
-void	*ft_memcpy(void *dst1, const void *src, size_t n)
+void	*ft_memcpy(void *dst1, const void *src1, size_t n)
 {
-	size_t	i;
-	char	*dst2;
+	unsigned char		*dst;
+	unsigned const char	*src;
+	size_t				i;
 
 	i = 0;
-	dst2 = dst1;
+	if (dst1 == NULL && src1 == NULL)
+		return (NULL);
+	dst = (unsigned char *)dst1;
+	src = (unsigned const char *) src1;
 	while (i < n)
 	{
-		dst2[i] = ((char *)src)[i];
+		dst[i] = ((unsigned char *)src)[i];
 		i++;
 	}
 	return (dst1);

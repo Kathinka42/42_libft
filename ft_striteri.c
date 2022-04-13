@@ -6,7 +6,7 @@
 /*   By: kczichow <kczichow@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/07 14:51:03 by kczichow          #+#    #+#             */
-/*   Updated: 2022/04/11 17:43:24 by kczichow         ###   ########.fr       */
+/*   Updated: 2022/04/13 11:09:24 by kczichow         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,24 +16,18 @@
 // passing its index as first argument. Each character is passed by address to
 // ’f’ to be modified if necessary.
 
-void	ft_striteri(char *s, void (*f)(unsigned int, char*));
+void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 {
-	char	*res;
-	size_t	i;
+	int	i;
 
 	i = 0;
 	if (s == NULL)
-		return (NULL);
+		return ;
 	if (f == NULL)
-		return (NULL);
-	res = ft_strdup(s);
-	if (res == NULL)
-		return ((char *)s);
-	while (res[i] != '\0')
+		return ;
+	while (s[i] != '\0')
 	{
-		res[i] = f(i, res[&i]);
+		f(i, &s[i]);
 		i++;
 	}
-	res[i] = '\0';
-	return (res);
 }

@@ -6,7 +6,7 @@
 /*   By: kczichow <kczichow@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/01 10:31:20 by kczichowsky       #+#    #+#             */
-/*   Updated: 2022/04/11 12:47:20 by kczichow         ###   ########.fr       */
+/*   Updated: 2022/04/13 17:01:16 by kczichow         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,6 @@
 
 // Allocates (with malloc(3)) and returns a new string, which is the result of
 // the concatenation of ’s1’ and ’s2’.
-// Fehler bei libftTester, wenn mindestens einer der Strings nicht leer ist.
-// if Bedingung s1 || s2 == NULL bei git hub? ergibt keinen Sinn.
 
 char	*ft_strjoin(char const	*s1, char const	*s2)
 {
@@ -23,10 +21,10 @@ char	*ft_strjoin(char const	*s1, char const	*s2)
 	size_t	len_s1;
 	size_t	len_s2;
 
+	if (s1 == NULL || s2 == NULL)
+		return (NULL);
 	len_s1 = ft_strlen(s1);
 	len_s2 = ft_strlen(s2);
-	if (s1 == NULL && s2 == NULL)
-		return (NULL);
 	newstring = malloc(sizeof(char) * (len_s1 + len_s2 + 1));
 	if (newstring == NULL)
 		return (NULL);
