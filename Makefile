@@ -3,14 +3,14 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: kczichow <kczichow@student.42.fr>          +#+  +:+       +#+         #
+#    By: kczichowsky <kczichowsky@student.42.fr>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/28 16:16:50 by kczichow          #+#    #+#              #
-#    Updated: 2022/04/13 16:53:43 by kczichow         ###   ########.fr        #
+#    Updated: 2022/05/03 14:24:35 by kczichowsky      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-# per default, the command "make" only executes the command found after "all:";
+# per default, the command "make" executes only the command found after "all:";
 # every other command needs to be called explicitly; if there is a command
 # inbetween, that creates an error, the program exits at this point; the
 # Makefile only recompiles the files where it finds updates, not all files,
@@ -55,7 +55,12 @@ FUNCTIONS	= ft_isalpha.c \
 				
 FUNCTIONS_BONUS = ft_lstnew.c \
 				ft_lstadd_front.c \
-				ft_lstsize.c
+				ft_lstsize.c \
+				ft_lstlast.c \
+				ft_lstadd_back.c \
+				ft_lstdelone.c \
+				ft_lstclear.c \
+				ft_lstiter.c
 				
 # the following rule creates .o files from the .c input files
 OBJS		=	${FUNCTIONS:.c=.o}
