@@ -6,15 +6,19 @@
 /*   By: kczichow <kczichow@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/23 08:52:18 by kczichow          #+#    #+#             */
-/*   Updated: 2022/04/13 11:33:05 by kczichow         ###   ########.fr       */
+/*   Updated: 2022/05/04 09:24:00 by kczichow         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+/*	FT_ISALNUM
+*	-----------
+*	DESCRIPTION
+*	The function tests for any character for which isalpha(3) or isdigit(3)
+*	is true.  The value of the argument must be representable as an unsigned
+*	char or the value of EOF. The return value is either 1 (true) or 0 (false).
+*/
 
-// The isalnum() function tests for any character for which isalpha(3) or
-// isdigit(3) is true.  The value of the argument must be representable as an
-// unsigned char or the value of EOF.
+#include "libft.h"
 
 int	ft_isalnum(int i)
 {

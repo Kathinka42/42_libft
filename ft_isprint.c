@@ -6,15 +6,19 @@
 /*   By: kczichow <kczichow@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/23 09:13:04 by kczichow          #+#    #+#             */
-/*   Updated: 2022/04/13 11:40:44 by kczichow         ###   ########.fr       */
+/*   Updated: 2022/05/04 09:36:09 by kczichow         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+/*	FT_ISPRINT
+*	-----------
+*	DESCRIPTION
+*	The function tests for any printing character, including space
+*	(` '). The value of the argument must be representable as an unsigned char
+*	or the value of EOF. The return value is either 1 (true) or 0 (false).
+*/
 
-// The isprint() function tests for any printing character, including space
-// (` ').  The value of the argument must be representable as an unsigned char
-// or the value of EOF.
+#include "libft.h"
 
 int	ft_isprint(int i)
 {
@@ -22,14 +26,3 @@ int	ft_isprint(int i)
 		return (1);
 	return (0);
 }
-
-// int main()
-// {
-// 	printf("%d\n", ft_isprint(59));
-// 	printf("%d\n", isprint(59));
-
-// 	printf("%d\n", ft_isprint(57));
-// 	printf("%d\n", isprint(57));
-
-// 	return (0);
-// }

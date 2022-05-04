@@ -6,13 +6,20 @@
 /*   By: kczichow <kczichow@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/23 11:35:12 by kczichow          #+#    #+#             */
-/*   Updated: 2022/04/13 14:56:37 by kczichow         ###   ########.fr       */
+/*   Updated: 2022/05/04 10:17:54 by kczichow         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+/*	FT_MEMCPY
+*	-----------
+*	DESCRIPTION
+*	The function function copies n bytes from memory area src to memory area
+*	dst. If dst and src overlap, behavior is undefined, use ft_memmove instead.
+*	Void pointer cannot be dereferenced. Therefore new pointer is being created
+*	which point to the same address.
+*/
 
-//The memcpy() function copies n bytes from memory area src to memory area dst;
+#include "libft.h"
 
 void	*ft_memcpy(void *dst1, const void *src1, size_t n)
 {
@@ -32,28 +39,3 @@ void	*ft_memcpy(void *dst1, const void *src1, size_t n)
 	}
 	return (dst1);
 }
-
-// int	main()
-// {
-// 	const char src1[20] = "Hello";
-// 	char dst1[20] = "This is 42";
-
-// 	printf("%s\n", ft_memcpy(dst1, src1, 1));
-
-// 	const char src2[20] = "Hello";
-// 	char dst2[20] = "This is 42";
-
-// 	printf("%s\n", memcpy(dst2, src2, 1));
-
-// 	const char src3[20] = "Hello";
-// 	char dst3[20] = "This";
-
-// 	printf("%s\n", ft_memcpy(dst3, src3, 20));
-
-// 	const char src4[20] = "Hello";
-// 	char dst4[20] = "This";
-
-// 	printf("%s\n", memcpy(dst4, src4, 20));
-
-// 	return (0);
-// }

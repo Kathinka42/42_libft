@@ -6,14 +6,18 @@
 /*   By: kczichow <kczichow@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/01 10:31:20 by kczichowsky       #+#    #+#             */
-/*   Updated: 2022/04/13 17:01:16 by kczichow         ###   ########.fr       */
+/*   Updated: 2022/05/04 11:12:40 by kczichow         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+/*	FT_STRJOIN
+*	-------------
+*	DESCRIPTION
+*	The function allocates (with malloc(3)) and returns a new string, which is
+*	the result of the concatenation of ’s1’ and ’s2’.
+*/
 
-// Allocates (with malloc(3)) and returns a new string, which is the result of
-// the concatenation of ’s1’ and ’s2’.
+#include "libft.h"
 
 char	*ft_strjoin(char const	*s1, char const	*s2)
 {
@@ -33,11 +37,3 @@ char	*ft_strjoin(char const	*s1, char const	*s2)
 	newstring[len_s1 + len_s2] = '\0';
 	return (newstring);
 }
-
-// int main()
-// {
-// 	char const s1[20] = "Hallo";
-// 	char const s2[20] = "Wie geht es dir?";
-
-// 	printf("%s\n", ft_strjoin(s1, s2));
-// }

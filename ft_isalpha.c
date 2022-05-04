@@ -6,17 +6,21 @@
 /*   By: kczichow <kczichow@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/22 14:47:38 by kczichow          #+#    #+#             */
-/*   Updated: 2022/04/13 11:27:34 by kczichow         ###   ########.fr       */
+/*   Updated: 2022/05/04 09:32:58 by kczichow         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+/*	FT_ISALPHA
+*	-----------
+*	DESCRIPTION
+*	The function tests for any alphabetic lower or upper character. The value
+*	of the argument must be representable as an unsigned char or the value of
+*	EOF (end of file). The return value is either 1 (true) or 0 (false).
+*	ASCII A = 65, Z = 90; a = 97, z = 122
+*	Original function in library <ctype.h>
+*/
 
-// The isalpha() function tests for any character for which ft_isupper or
-// ft_islower is true.  The value of the argument must be representable as an
-// unsigned char or the value of EOF.
-// ASCII A = 65, Z = 90; a = 97,  z = 122
-// <ctype.h>
+#include "libft.h"
 
 int	ft_isalpha(int i)
 {
@@ -24,13 +28,3 @@ int	ft_isalpha(int i)
 		return (1);
 	return (0);
 }
-
-/*
-int	main(void)
-{
-	printf("%d\n", ft_isalpha('e'));
-	printf("%d\n", isalpha('e'));
-
-	return (0);
-}
-*/

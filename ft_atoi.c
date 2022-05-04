@@ -6,13 +6,22 @@
 /*   By: kczichow <kczichow@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/30 09:02:26 by kczichow          #+#    #+#             */
-/*   Updated: 2022/04/13 13:21:48 by kczichow         ###   ########.fr       */
+/*   Updated: 2022/05/04 09:15:04 by kczichow         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+/*	FT_ATOI
+*	-----------
+*	DESCRIPTION
+*	The function converts an ASCII string to an integer. It first checks for
+*	leading whitespaces (auxiliary function is_whitespace) and sets the counter
+*	to the first character that is not a whitespace. Secondly it checks for a
+*	+ or - and sets the variable sign to either a positive or negative value
+*	(auxiliary function set_sign). It converts the character to integer by
+*	subtracting '0'.
+*/
 
-// convert ASCII string to integer, ignore leading whitespaces;
+#include "libft.h"
 
 static int	set_sign(const char *str, int i)
 {
@@ -53,33 +62,3 @@ int	ft_atoi(const char *str)
 	}
 	return (number * sign);
 }
-
-// int main()
-// {
-//   const char str[20] = " -h12345678";
-
-//   printf("%d\n", ft_atoi(str));
-//   printf("%d\n", atoi(str));
-
-//   const char str1[20] = "5678";
-
-//   printf("%d\n", ft_atoi(str1));
-//   printf("%d\n", atoi(str1));
-
-//   const char str2[20] = "-12345678";
-
-//   printf("%d\n", ft_atoi(str2));
-//   printf("%d\n", atoi(str2));
-
-//   const char str3[20] = " ";
-
-//   printf("%d\n", ft_atoi(str3));
-//   printf("%d\n", atoi(str3));
-
-//   const char str4[20] = "hallo 42";
-
-//   printf("%d\n", ft_atoi(str4));
-//   printf("%d\n", atoi(str4));
-
-//   return (0);
-// }

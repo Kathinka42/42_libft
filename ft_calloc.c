@@ -6,14 +6,18 @@
 /*   By: kczichow <kczichow@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/23 10:55:08 by kczichow          #+#    #+#             */
-/*   Updated: 2022/04/13 12:58:24 by kczichow         ###   ########.fr       */
+/*   Updated: 2022/05/04 09:22:15 by kczichow         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+/*	FT_CALLOC
+*	-----------
+*	DESCRIPTION
+*	The function allocates memory like malloc, but deletes everything that
+*	might already be written in there. It uses bzero to do this.
+*/
 
-// Function allocates memory like malloc, but deletes everything that might
-// already be written in there; 
+#include "libft.h"
 
 void	*ft_calloc(size_t	count, size_t	size)
 {
@@ -25,9 +29,3 @@ void	*ft_calloc(size_t	count, size_t	size)
 	ft_bzero(ptr, (count * size));
 	return (ptr);
 }
-
-// int main ()
-// {
-// 	size_t	count1;
-// 	size_t	size;
-// }

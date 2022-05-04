@@ -6,9 +6,20 @@
 /*   By: kczichow <kczichow@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/11 17:57:32 by kczichow          #+#    #+#             */
-/*   Updated: 2022/04/13 10:30:08 by kczichow         ###   ########.fr       */
+/*   Updated: 2022/05/04 10:35:11 by kczichow         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+/*	FT_PUTNBR_FD
+*	-------------
+*	DESCRIPTION
+*	The function converts the integer input to a character string and
+*	outputs the string to the given file descriptor fd. To do this the function
+*	calls itself (recursion), while dividing the input number by 10 each time
+*	it does this. When the input number only contains one digit, the modulo
+*	operation is used to print the individual chars with the putchar function.
+*	The edge case -2147483648 is handled separately.
+*/
 
 #include "libft.h"
 

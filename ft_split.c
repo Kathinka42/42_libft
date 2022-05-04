@@ -3,12 +3,51 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kczichowsky <kczichowsky@student.42.fr>    +#+  +:+       +#+        */
+/*   By: kczichow <kczichow@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/08 09:06:32 by kczichowsky       #+#    #+#             */
-/*   Updated: 2022/04/12 11:36:09 by kczichowsky      ###   ########.fr       */
+/*   Updated: 2022/05/04 11:03:31 by kczichow         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+/*	FT_SPLIT
+*	-------------
+*	DESCRIPTION
+*	This function is the most difficult function in the libft project at 42.
+*	It allocates (with malloc(3)) and returns an array of strings obtained by
+*	splitting ’s’ using the character ’c’ as a delimiter. The array must end
+*	with a NULL pointer. In practical terms, the delimiter 'c' is most
+*	likely a space sign, which separates different words.
+*
+*	AUXILIARY FUNCTIONS
+*	-------------------
+*	COUNT_WORD
+*	-----------
+*	DESCRIPTION
+*	This function counts the number of words in the string. It considers the
+*	possibility of various subsequent delimiters 'c' (spaces) and counts on
+*	until it finds the next word. The return value (int) of this function is
+*	used to allocate memory for the result array. It is also used to determine
+*	the number of iterations that the print_word function writes in the result
+*	array.
+*
+*	PRINT_WORD
+*	-----------
+*	DESCRIPTION
+*	This function writes the word into the string array. It allocates memory
+*	using the function ft_substr. As input it takes the position of the next
+*	word to be copied in the string array. It iterates through the word, until
+*	it either reaches the end of the string or the next delimiter.
+*
+*	CLEAN
+*	------
+*	DESCRIPTION
+*	This function is called in every iteration of the loop where the words are
+*	being copied into the string array. Only if the print_word function cannot
+*	allocate enough memory for the next word (which is only know during
+*	runtime of the function), it frees all previously allocated memory, because
+*	the function cannot complete its task.
+*/
 
 #include "libft.h"
 
@@ -86,14 +125,3 @@ char	**ft_split(char const *s, char c)
 	res[j] = NULL;
 	return (res);
 }
-
-// int main()
-// {
-// 	char const s[40] = "  Hallo 42, hier    bin ich.";
-// 	char c;
-// 	c = ' ';
-
-// 	printf("%zu\n", count_word(s, c));
-// 	ft_split(s, c);
-// 	return (0);
-// }

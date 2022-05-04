@@ -6,15 +6,18 @@
 /*   By: kczichow <kczichow@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/23 10:55:08 by kczichow          #+#    #+#             */
-/*   Updated: 2022/04/13 14:41:50 by kczichow         ###   ########.fr       */
+/*   Updated: 2022/05/04 09:18:51 by kczichow         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
-#include <stdio.h>
+/*	FT_BZERO
+*	-----------
+*	DESCRIPTION
+*	The bzero() function writes len zeroed bytes to the string str. An empty
+*	string is not being considered and leads to segfault.
+*/
 
-// The bzero() function writes n zeroed bytes to the string str; Empty string
-// is not being considered -> segfault
+#include "libft.h"
 
 void	*ft_bzero(void *str, size_t len)
 {
@@ -28,19 +31,3 @@ void	*ft_bzero(void *str, size_t len)
 	}
 	return (str);
 }
-
-// int	main()
-// {
-// 	char str1[] = "Hello 42";
-// 	char str2[] = "Hello 42";
-// 	size_t i;
-// 	i = 5;
-
-// 	printf("%s\n", str1);
-// 	printf("%s\n", ft_bzero(str1, i));
-// 	printf("%s\n", str1);
-// 	printf("%s\n", str2);
-// 	printf("%s\n", bzero(str2, i));
-// 	printf("%s\n", str2);
-// 	return (0);
-// }

@@ -6,16 +6,20 @@
 /*   By: kczichow <kczichow@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/25 11:46:33 by kczichow          #+#    #+#             */
-/*   Updated: 2022/04/06 12:37:51 by kczichow         ###   ########.fr       */
+/*   Updated: 2022/05/04 11:05:44 by kczichow         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+/*	FT_STRCHR
+*	-------------
+*	DESCRIPTION
+*	The function locates the first occurence of c in string str, whereas the
+*	terminating null is considered part of the string. Int i is converted to
+*	char. The functions strchr() and strrchr() return a pointer to the located
+*	character, or NULL if the character does not appear in the string.
+*/
 
-// locate the first occurence of c in string str, whereas the terminating
-// null is considered part of the string; int i is converted to char;
-// The functions strchr() and strrchr() return a pointer to the located
-// character, or NULL if the character does not appear in the string.
+#include "libft.h"
 
 char	*ft_strchr(const char *str, int c)
 {
@@ -34,16 +38,3 @@ char	*ft_strchr(const char *str, int c)
 		return ((char *)str + ft_strlen(str));
 	return (NULL);
 }
-
-// int	main() 
-// {
-// 	const char str1[20] = "Hello 42";
-// 	int a;
-// 	a = 'e';
-
-// 	printf("%s\n", ft_strchr(str1, a));
-
-// 	printf("%s\n", strchr(str1, a));
-
-// 	return (0);
-// }

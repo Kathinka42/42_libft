@@ -6,23 +6,27 @@
 /*   By: kczichow <kczichow@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/23 13:57:10 by kczichow          #+#    #+#             */
-/*   Updated: 2022/04/13 15:02:07 by kczichow         ###   ########.fr       */
+/*   Updated: 2022/05/04 10:20:09 by kczichow         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+/*	FT_MEMMOVE
+*	-----------
+*	DESCRIPTION
+*	The function copies len bytes from string src to string dst. The two
+*	strings may overlap. This is why the function does a case distinction.
+*	The copy is always done in a non-destructive manner. The function returns
+*	the original value of dst. Void pointer cannot be dereferenced. Therefore
+*	new pointer is being created which points to the same address.
+*/
 
-// The memmove() function copies len bytes from string src to string dst. The
-// two strings may overlap; the copy is always done in a non-destructive manner.
-// The memmove() function returns the original value of dst.
+#include "libft.h"
 
 void	*ft_memmove(void *dst1, const void *src1, size_t len)
 {
-	size_t				i;
 	unsigned char		*dst;
 	unsigned const char	*src;
 
-	i = 0;
 	if (dst1 == NULL && src1 == NULL)
 		return (NULL);
 	dst = (unsigned char *) dst1;
@@ -39,18 +43,3 @@ void	*ft_memmove(void *dst1, const void *src1, size_t len)
 	}
 	return (dst1);
 }
-
-// int	main()
-// {
-// 	const char src1[30] = "Dies ist ein Test";
-// 	char dst1[30] = "XXXOO";
-
-// 	printf("%s\n", ft_memmove(dst1+1, src1, 10));
-
-// 	const char src2[30] = "Dies ist ein Test";
-// 	char dst2[30] = "XXXOO";
-
-// 	printf("%s\n", memmove(dst2+1, src2, 10));
-
-// 	return (0);
-// }

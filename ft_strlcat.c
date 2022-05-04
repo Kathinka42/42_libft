@@ -6,21 +6,21 @@
 /*   By: kczichow <kczichow@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/23 14:19:54 by kczichow          #+#    #+#             */
-/*   Updated: 2022/04/13 12:57:41 by kczichow         ###   ########.fr       */
+/*   Updated: 2022/05/04 11:15:53 by kczichow         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+/*	FT_STRLCAT
+*	-------------
+*	DESCRIPTION
+*	The function function appends string src to the end of dst. It will append
+*	at most dstsize - strlen(dst) - 1 characters. It will then NUL- terminate,
+*	unless dstsize is 0 or the original dst string was longer than dstsize
+*	(in practice this should not happen as it means that either dstsize is
+*	incorrect or that dst is not a proper string).
+*/
 
-// function appends string src to the end of dst.  It will append at most
-// size - strlen(dst) - 1 characters.  It will then NUL- terminate, unless
-// size is 0 or the original dst string was longer than dstsize (in practice
-// this should not happen as it means that either dstsize is incorrect or that
-// dst is not a proper string)
-//
-// Characters from string src are appended to string dst. The dstsize argument
-// is equal to the size of the dst buffer, which caps the number of characters
-// copied to this size, minus one for the null character.
+#include "libft.h"
 
 size_t	ft_strlcat(char *dest, const char *src, size_t dstsize)
 {
@@ -41,20 +41,3 @@ size_t	ft_strlcat(char *dest, const char *src, size_t dstsize)
 	dest[destlen + i] = '\0';
 	return (destlen + srclen);
 }
-
-// int main()
-// {
-//     const char  src[] = "Hallo42K";
-//     char dst[25] = "AAA";
-//     size_t dstsize = 19;
-
-//     printf("Erster Test: %zu\n", ft_strlcat(dst, src, dstsize));
-
-// 	const char  src1[] = "Hallo42K";
-//     char dst1[25] = "AAA";
-//     size_t dstsize1 = 19;
-
-//     printf("Zweiter Test: %zu\n", strlcat(dst1, src1, dstsize1));
-
-//     return (0);
-// }

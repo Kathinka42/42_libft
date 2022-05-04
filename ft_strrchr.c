@@ -3,19 +3,26 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kczichowsky <kczichowsky@student.42.fr>    +#+  +:+       +#+        */
+/*   By: kczichow <kczichow@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/25 13:52:04 by kczichow          #+#    #+#             */
-/*   Updated: 2022/04/12 11:10:42 by kczichowsky      ###   ########.fr       */
+/*   Updated: 2022/05/04 11:30:36 by kczichow         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+/*	FT_STRRCHR
+*	-------------
+*	DESCRIPTION
+*	The function locates the last occurence of c in string str, whereas the
+*	terminating null is considered part of the string; int i is converted to
+*	char. The functions strchr() and strrchr() return a pointer to the located
+*	character, or NULL if the character does not appear in the string.
+*	The function iterates through the entire string, setting a counter to
+*	the length of the string. It then searches the string backwards and
+*	returns the first occurence of the character.
+*/
 
-// locate the last occurence of c in string str, whereas the terminating
-// null is considered part of the string; int i is converted to char;
-// The functions strchr() and strrchr() return a pointer to the located
-// character, or NULL if the character does not appear in the string.
+#include "libft.h"
 
 char	*ft_strrchr(const char *str, int c)
 {
@@ -38,16 +45,3 @@ char	*ft_strrchr(const char *str, int c)
 		return ((char *)str + ft_strlen(str));
 	return (NULL);
 }
-
-// int main()
-// { 
-// 	const char str1[20] = "Hello 42"; 
-// 	int a;
-// 	a = 'l';
-
-// 	printf("%s\n", ft_strrchr(str1, a));
-
-// 	printf("%s\n", strrchr(str1, a));
-
-// 	return (0);
-// }

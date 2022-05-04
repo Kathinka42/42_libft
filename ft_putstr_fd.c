@@ -6,9 +6,15 @@
 /*   By: kczichow <kczichow@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/11 17:29:10 by kczichow          #+#    #+#             */
-/*   Updated: 2022/04/11 17:47:05 by kczichow         ###   ########.fr       */
+/*   Updated: 2022/05/04 10:36:21 by kczichow         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+/*	FT_PUTSTR_FD
+*	-------------
+*	DESCRIPTION
+*	The function outputs the string ’s’ to the given file descriptor fd.
+*/
 
 #include "libft.h"
 

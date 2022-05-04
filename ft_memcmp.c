@@ -6,18 +6,23 @@
 /*   By: kczichow <kczichow@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/28 20:08:52 by kczichow          #+#    #+#             */
-/*   Updated: 2022/04/13 14:10:29 by kczichow         ###   ########.fr       */
+/*   Updated: 2022/05/04 09:56:36 by kczichow         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+/*	FT_MEMCMP
+*	-----------
+*	DESCRIPTION
+*	The function compares byte string s1 against byte string s2. Both strings
+*	are assumed to be n bytes long. The function returns zero if the two
+*	strings are identical, otherwise returns the difference between the first
+*	two differing bytes (treated as unsigned char values, so that `\200' is
+*	greater than `\0', for example). Zero-length strings are always identical.
+*	The const void input variables need to be casted into strings first in
+*	order to perform the operation.
+*/
 
-// The memcmp() function compares byte string s1 against byte string s2. Both
-// strings are assumed to be n bytes long. The memcmp() function returns zero
-// if the two strings are identical, otherwise returns the difference between
-// the first two differing bytes (treated as unsigned char values, so that
-// `\200' is greater than `\0', for example).  Zero-length strings are always
-// identical.
+#include "libft.h"
 
 int	ft_memcmp(const void *str1, const void *str2, size_t	n)
 {
@@ -38,18 +43,3 @@ int	ft_memcmp(const void *str1, const void *str2, size_t	n)
 	}
 	return (0);
 }
-
-// int	main()
-
-// 	const char str11[20] = "MMMMMX";
-// 	const char str21[20] = "MMMMMMMMMM";
-// 	size_t n1 = 9;
-// 	printf("%d\n", ft_memcmp(str11, str21, n1));
-
-// 	const char str12[20] = "MMMMMX";
-// 	const char str22[20] = "MMMMMMMMMM";
-// 	size_t n2 = 9;
-// 	printf("%d\n", memcmp(str12, str22, n2));
-
-// 	return (0);
-// }

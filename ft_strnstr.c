@@ -6,16 +6,20 @@
 /*   By: kczichow <kczichow@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/25 13:52:04 by kczichow          #+#    #+#             */
-/*   Updated: 2022/04/04 09:50:57 by kczichow         ###   ########.fr       */
+/*   Updated: 2022/05/04 11:26:37 by kczichow         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+/*	FT_STRNSTR
+*	-------------
+*	DESCRIPTION
+*	The function locates the first occurrence of the null-terminated
+*	string needle in the null-terminated string haystack, where not more than
+*	len characters are searched. Characters that appear after a `\0' character
+*	are not searched.
+*/
 
-// The strstr() function locates the first occurrence of the null-terminated
-// string needle in the null-terminated string haystack, where not more than len
-// characters are searched.  Characters that appear after a `\0' character are
-// not searched. 
+#include "libft.h"
 
 char	*ft_strnstr(const char	*haystack, const char	*needle, size_t	len)
 {
@@ -43,17 +47,3 @@ char	*ft_strnstr(const char	*haystack, const char	*needle, size_t	len)
 	}
 	return (NULL);
 }
-
-// int main()
-// {
-// 	char str1[20] = "ABCDEFGHIJKLMN";
-//   char str2[20] = "JKL";
-// 	size_t len;
-// 	len = 13;
-
-// 	printf("%s\n", ft_strnstr(str1,str2,len));
-
-// 	printf("%s\n", strnstr(str1,str2,len));
-
-// 	return (0);
-// }
