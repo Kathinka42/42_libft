@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstiter.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kczichowsky <kczichowsky@student.42.fr>    +#+  +:+       +#+        */
+/*   By: kczichow <kczichow@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/03 13:52:16 by kczichowsky       #+#    #+#             */
-/*   Updated: 2022/05/03 14:30:19 by kczichowsky      ###   ########.fr       */
+/*   Updated: 2022/05/04 12:39:35 by kczichow         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,16 +21,16 @@
 
 #include "libft.h"
 
-void ft_lstiter(t_list *lst, void (*f)(void *))
+void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
 	t_list	*temp;
 
 	temp = lst;
 	if (temp == NULL || f == NULL)
-		return;
+		return ;
 	while (temp)
 	{
 		f(temp->content);
-		temp = temp->next; 
+		temp = temp->next;
 	}
 }

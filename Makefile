@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: kczichowsky <kczichowsky@student.42.fr>    +#+  +:+       +#+         #
+#    By: kczichow <kczichow@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/28 16:16:50 by kczichow          #+#    #+#              #
-#    Updated: 2022/05/03 14:24:35 by kczichowsky      ###   ########.fr        #
+#    Updated: 2022/05/04 12:14:49 by kczichow         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -60,7 +60,8 @@ FUNCTIONS_BONUS = ft_lstnew.c \
 				ft_lstadd_back.c \
 				ft_lstdelone.c \
 				ft_lstclear.c \
-				ft_lstiter.c
+				ft_lstiter.c \
+				ft_lstmap.c
 				
 # the following rule creates .o files from the .c input files
 OBJS		=	${FUNCTIONS:.c=.o}

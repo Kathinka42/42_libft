@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kczichowsky <kczichowsky@student.42.fr>    +#+  +:+       +#+        */
+/*   By: kczichow <kczichow@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/11 13:12:48 by kczichow          #+#    #+#             */
-/*   Updated: 2022/05/03 09:07:08 by kczichowsky      ###   ########.fr       */
+/*   Updated: 2022/05/04 12:41:56 by kczichow         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@
 
 t_list	*ft_lstnew(void *content)
 {
-	t_list *newnode;
+	t_list	*newnode;
 
 	newnode = malloc(sizeof(t_list));
 	if (newnode == NULL)

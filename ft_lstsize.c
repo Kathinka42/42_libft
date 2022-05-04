@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstsize.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kczichowsky <kczichowsky@student.42.fr>    +#+  +:+       +#+        */
+/*   By: kczichow <kczichow@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/11 14:25:23 by kczichow          #+#    #+#             */
-/*   Updated: 2022/05/03 14:28:58 by kczichowsky      ###   ########.fr       */
+/*   Updated: 2022/05/04 13:09:36 by kczichow         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ int	ft_lstsize(t_list *lst)
 	if (lst == NULL)
 		return (0);
 	temp = lst;
-	while(temp != NULL)
+	while (temp)
 	{
 		temp = temp->next;
 		count++;
