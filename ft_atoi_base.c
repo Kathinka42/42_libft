@@ -6,18 +6,20 @@
 /*   By: kczichowsky <kczichowsky@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/15 09:02:26 by kczichow          #+#    #+#             */
-/*   Updated: 2022/11/23 16:58:18 by kczichowsky      ###   ########.fr       */
+/*   Updated: 2022/11/23 20:29:15 by kczichowsky      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /*	FT_ATOI_BASE
 *	-------------
 *	DESCRIPTION
-*	The function converts an ASCII string to an integer. It first checks for
-*	leading whitespaces and sets the counter to the first character that is not
-*	a whitespace. Secondly it checks for a + or - and sets the variable sign to
-*	either a positive or negative value. It converts the character to integer by
-*	subtracting '0'.
+*	The function converts the string argument str (base N <= 16) to an integer
+*   (base 10) and returns it. The characters recognized in the input are:
+*   0123456789abcdef, which are trimmed according to the requested base. For
+*   example, base 4 recognizes "0123" and base 16 recognizes "0123456789abcdef"
+*   Uppercase letters are also recognized: "12fdb3" is the same as "12FDB3".
+*   Minus signs ('-') are interpreted only if they are the first character of
+*   the string.
 */
 
 #include "libft.h"
@@ -76,9 +78,3 @@ int	ft_atoi_base(const char *str, int str_base)
     }
     return ((int)(number * sign));
 }
-
-// int main(int argc, char *argv[])
-// {
-//     printf("%d\n", ft_atoi_base(argv[1], atoi(argv[2])));
-//     return (0);
-// }
