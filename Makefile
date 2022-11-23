@@ -6,7 +6,7 @@
 #    By: kczichowsky <kczichowsky@student.42.fr>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/28 16:16:50 by kczichow          #+#    #+#              #
-#    Updated: 2022/11/23 20:19:38 by kczichowsky      ###   ########.fr        #
+#    Updated: 2022/11/23 20:22:26 by kczichowsky      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -51,7 +51,7 @@ FUNCTIONS	= ft_isalpha.c \
 				ft_putchar_fd.c \
 				ft_putstr_fd.c \
 				ft_putendl_fd.c \
-				ft_putnbr_fd.c 
+				ft_putnbr_fd.c \
 				ft_lstnew.c \
 				ft_lstadd_front.c \
 				ft_lstsize.c \
