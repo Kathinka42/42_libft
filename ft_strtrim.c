@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kczichow <kczichow@student.42.fr>          +#+  +:+       +#+        */
+/*   By: kczichowsky <kczichowsky@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/04 09:25:56 by kczichow          #+#    #+#             */
-/*   Updated: 2022/05/04 11:32:40 by kczichow         ###   ########.fr       */
+/*   Updated: 2022/11/24 10:18:18 by kczichowsky      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,6 @@ char	*ft_strtrim(char const *s1, char const *set)
 
 	if (s1 == NULL || set == NULL)
 		return ((char *)s1);
-	while (*s1 == ' ' || *s1 == '\n' || *s1 == '\t')
-		s1++;
 	i = 0;
 	while (s1[i] && ft_strchr(set, s1[i]))
 		i++;
