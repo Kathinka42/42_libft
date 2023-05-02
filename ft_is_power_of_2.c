@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_is_power_of_2.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kczichowsky <kczichowsky@student.42.fr>    +#+  +:+       +#+        */
+/*   By: kczichow <kczichow@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/15 09:02:26 by kczichow          #+#    #+#             */
-/*   Updated: 2022/11/23 20:17:42 by kczichowsky      ###   ########.fr       */
+/*   Updated: 2023/05/02 10:32:44 by kczichow         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,16 +19,16 @@
 
 #include "libft.h"
 
-int	    is_power_of_2(unsigned int n)
+int	is_power_of_2(unsigned int n)
 {
-    if (n == 0)
-        return (0);
-    while (n > 1)
-    {
-        if (n % 2 == 0)
-            n = n / 2;
-        else
-            return (0);
-    }
-    return (1);
+	if (n == 0)
+		return (0);
+	while (n > 1)
+	{
+		if (n % 2 == 0)
+			n = n / 2;
+		else
+			return (0);
+	}
+	return (1);
 }

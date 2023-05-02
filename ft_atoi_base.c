@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi_base.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kczichowsky <kczichowsky@student.42.fr>    +#+  +:+       +#+        */
+/*   By: kczichow <kczichow@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/15 09:02:26 by kczichow          #+#    #+#             */
-/*   Updated: 2022/11/23 20:29:15 by kczichowsky      ###   ########.fr       */
+/*   Updated: 2023/05/02 10:31:37 by kczichow         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,57 +24,57 @@
 
 #include "libft.h"
 
-int validate_input(char c, int base)
+int	validate_input(char c, int base)
 {
-    const char str1[17] = "0123456789abcdef";
-    const char str2[17] = "0123456789ABCDEF";
+	const char	str1[17] = "0123456789abcdef";
+	const char	str2[17] = "0123456789ABCDEF";
 
-    while (base--)
-    {
-        if (str1[base] == c || str2[base] == c)
-            return (1);
-    }
-    return (0);
+	while (base--)
+	{
+		if (str1[base] == c || str2[base] == c)
+			return (1);
+	}
+	return (0);
 }
 
-int value_of(char c)
+int	value_of(char c)
 {
-    int val;
+	int	val;
 
-    val = 0;
-    if (c >= 'A' && c <= 'F')
-        val = c - 'A' + 10;
-    else if (c >= 'a' && c <= 'f')
-        val = c - 'a' + 10;
-    else if (c >= '0' && c <= '9')
-        val = c - '0';
-    return (val);
+	val = 0;
+	if (c >= 'A' && c <= 'F')
+		val = c - 'A' + 10;
+	else if (c >= 'a' && c <= 'f')
+		val = c - 'a' + 10;
+	else if (c >= '0' && c <= '9')
+		val = c - '0';
+	return (val);
 }
 
 int	ft_atoi_base(const char *str, int str_base)
 {
-    int i;
-    long number;
-    long sign;
+	int		i;
+	long	number;
+	long	sign;
 
-    i = 0;
-    sign = 1;
-    number = 0;
-    while (str[i] != '\0' && (str[i] == ' ' || str[i] == '\t' || str[i] == '\n'
-		    || str[i] == '\r' || str[i] == '\v' || str[i] == '\f'))
-        i++;
-    if (str[i] == '-')
-        sign = -1;
-    if (str[i] == '-' || str[i] == '+')
-        i++;
-    while (str[i] != '\0' && validate_input(str[i], str_base))
-    {
-        if ((number * sign) < INT32_MIN)
+	i = 0;
+	sign = 1;
+	number = 0;
+	while (str[i] != '\0' && (str[i] == ' ' || str[i] == '\t' || str[i] == '\n'
+			|| str[i] == '\r' || str[i] == '\v' || str[i] == '\f'))
+		i++;
+	if (str[i] == '-')
+		sign = -1;
+	if (str[i] == '-' || str[i] == '+')
+		i++;
+	while (str[i] != '\0' && validate_input(str[i], str_base))
+	{
+		if ((number * sign) < INT32_MIN)
 			return (0);
 		else if ((number * sign) > INT32_MAX)
 			return (-1);
-        number = number * str_base + value_of(str[i]);
-        i++;
-    }
-    return ((int)(number * sign));
+		number = number * str_base + value_of(str[i]);
+		i++;
+	}
+	return ((int)(number * sign));
 }
