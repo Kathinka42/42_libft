@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: kczichowsky <kczichowsky@student.42.fr>    +#+  +:+       +#+         #
+#    By: kczichow <kczichow@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/28 16:16:50 by kczichow          #+#    #+#              #
-#    Updated: 2022/11/23 20:22:26 by kczichowsky      ###   ########.fr        #
+#    Updated: 2023/05/02 10:38:47 by kczichow         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -62,11 +62,12 @@ FUNCTIONS	= ft_isalpha.c \
 				ft_lstiter.c \
 				ft_lstmap.c \
 				ft_atoi_base.c \
-				ft_is_power_of_2.c
+				ft_is_power_of_2.c \
+				get_next_line.c \
+				get_next_line_utils.c \
 				
 # the following rule creates .o files from the .c input files
 OBJS		=	${FUNCTIONS:.c=.o}
-OBJS_BONUS	=	${FUNCTIONS_BONUS:.c=.o}
 CC			= gcc
 CFLAGS		= -Wall -Wextra -Werror
 
@@ -84,15 +85,12 @@ ${NAME}:	${OBJS}
 
 all:	${NAME}
 
-bonus:	${OBJS} ${OBJS_BONUS}
-		ar rc ${NAME} ${OBJS} ${OBJS_BONUS}
-
 clean:
-		${RM} ${OBJS} ${OBJS_BONUS}
+		${RM} ${OBJS}
 
 fclean:		clean
 			${RM} ${NAME}
 
 re:	fclean	all
 
-.PHONY: all bonus clean fclean re
+.PHONY: all clean fclean re

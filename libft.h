@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kczichowsky <kczichowsky@student.42.fr>    +#+  +:+       +#+        */
+/*   By: kczichow <kczichow@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/28 19:30:58 by kczichow          #+#    #+#             */
-/*   Updated: 2022/11/23 17:03:30 by kczichowsky      ###   ########.fr       */
+/*   Updated: 2023/05/02 10:39:26 by kczichow         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,13 +20,14 @@
 # include <unistd.h>
 # include <stdint.h>
 
+# define BUFFER_SIZE 1
+
 typedef struct s_list
 {
 	void			*content;
 	struct s_list	*next;
 }	t_list;
 
-// original libft functions
 int		ft_isalpha(int i);
 int		ft_isdigit(int i);
 int		ft_isalnum(int i);
@@ -61,7 +62,7 @@ void	ft_putchar_fd(char c, int fd);
 void	ft_putstr_fd(char *s, int fd);
 void	ft_putendl_fd(char *s, int fd);
 void	ft_putnbr_fd(int n, int fd);
-// bonus list functions
+
 t_list	*ft_lstnew(void *content);
 void	ft_lstadd_front(t_list **lst, t_list *new);
 int		ft_lstsize(t_list *lst);
@@ -71,8 +72,15 @@ void	ft_lstdelone(t_list *lst, void (*del)(void*));
 void	ft_lstclear(t_list **lst, void (*del)(void*));
 void	ft_lstiter(t_list *lst, void (*f)(void *));
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
+
+char	*get_next_line(int fd);
+size_t	ft_strlen_m(const char *str);
+char	*ft_strchr_m(char *str, int c);
+void	*ft_memcpy_m(void *dst1, const void *src1, size_t n);
+char	*ft_strjoin_m(char *s1, char *s2);
+
 // additional functions
-int	ft_atoi_base(const char *str, int str_base);
-int	is_power_of_2(unsigned int n);
+int		ft_atoi_base(const char *str, int str_base);
+int		is_power_of_2(unsigned int n);
 
 #endif
